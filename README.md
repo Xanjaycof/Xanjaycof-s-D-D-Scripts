@@ -1,2 +1,5 @@
 # Xanjaycof's D&D Scripts
-A collection of scripts made for MPMB's Sheet I have not only created, but also have shared to the public.
+Welcome to this repository, not as expansive as it should be, but with due time, it will reach that level.
+As of currently writing this README, I have created the following:
+
+1 Class
