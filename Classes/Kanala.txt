@@ -131,6 +131,8 @@ ClassList["kanala"] = {
 				spells : ["color spray", "comprehend languages", "cure wounds", "detect evil and good", "detect magic", "detect poison and disease", "disguise self", "expeditious retreat", "inflict wounds", "jump", "longstrider", "made armor", "shield", "thunderwave", "alter self", "barkskin", "blur", "darkvision", "enhance ability", "flame blade", "invisibility", "lesser restoration", "magic weapon", "mirror image", "misty step", "pass without trace", "protection from poison", "see invisiblity", "spider climb", "bestow curse", "blink", "fear", "protection from energy", "remove curse", "revivify", "tongues", "vampiric touch", "death ward", "fire shield", "freedom of movement", "stone shape", "stoneskin", "cone of cold", "greater restoration", "mislead", "raise dead"],
 
 				times : [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],
+
+				prepared : true,
 			},
 		},
 
@@ -344,6 +346,12 @@ AddSubClass(
 				description : "\n   " + "As an action, I can conjure one piece of Adventuring Gear, such as one arrow or one day's rations, from the opening of an opaque container within my reach. If the item can't fit in my hand, it appears in an unoccupied space within 5 ft. of me. The gp value of the item can't be more than 5 times my kanala level, which is also my gp limit for this feature. I can conjure multiple items this way, using a separate action for each one, but their sum total value can't surpass the gp limit. Any item valued under 1 gp instead has a value of 1 gp for this limit, and a potion of healing has a value of 10 gp for this limit. I can also conjure a gaming set or musical instrument that I'm proficient with, treating its value as 2 gp for this limit regardless of its normal value. When I finish my next long rest, each item conjured this way disappears if it hasn't already been consumed or destroyed, and my sum total value of conjured items returns to 0 gp. I can sell items that I conjure with this feature, but the buyer will probably be upset when their purchase is gone in the morning.",
 				additional : ["", "", "15 gp", "20 gp", "25 gp", "30 gp", "35 gp", "40 gp", "45 gp", "50 gp", "55 gp", "60 gp", "65 gp", "70 gp", "75 gp", "80 gp", "85 gp", "90 gp", "95 gp", "100 gp"],
 			},
+			"subclassfeature3.1" : {
+				name : "Bond Spells",
+				source : ["HB", 0],
+				minlevel : 3,
+				description : "\n   " + "I can cast each of my spells gained from this subclass once at their lowest level without expending a spell slot or material components. Once I do, I can't do so again until you finish a long rest.",
+			},
 			"subclassfeature6" : {
 				name : "Foolproof Fail-Safe",
 				source : ["HB", 0],
@@ -415,6 +423,12 @@ AddSubClass(
 				description : "\n   " + "Anytime a kanala spell I cast deals necrotic damage, I can choose one affected creature and deal extra necrotic damage to it equal to my spellcasting ability modifier. Additionally, I gain resistance to necrotic damage.",
 				dmgres : ["Necrotic"],
 			},
+			"subclassfeature3.2" : {
+				name : "Bond Spells",
+				source : ["HB", 0],
+				minlevel : 3,
+				description : "\n   " + "I can cast each of my spells gained from this subclass once at their lowest level without expending a spell slot or material components. Once I do, I can't do so again until you finish a long rest.",
+			},
 			"subclassfeature6" : {
 				name : "Improved Bond Spells",
 				source : ["HB", 0],
@@ -474,6 +488,12 @@ AddSubClass(
 					feature : "locus forms",
 					bonus : 1
 				}],
+			},
+			"subclassfeature3.1" : {
+				name : "Bond Spells",
+				source : ["HB", 0],
+				minlevel : 3,
+				description : "\n   " + "I can cast each of my spells gained from this subclass once at their lowest level without expending a spell slot or material components. Once I do, I can't do so again until you finish a long rest.",
 			},
 			"subclassfeature6" : {
 				name : "Offensive Action",
@@ -554,6 +574,12 @@ AddSubClass(
 				description : "\n   " + "I gain a single 1st-level spell slot to use as I see fit. I can expend it to cast any spell of its level or lower from any spell list, and I regain it after finishing a long rest. Casting a spell this way does not mean I know that spell. My locus actually produces a magical effect that imitates the spell I wished to cast, even if I already know it. The spell slot's level increases as I gain more levels in the kanala class: it becomes 2nd-level at 6th level, 3rd-level at10th level, 4th-level at 15th level, and 5th-level at 18th level.",
 				additional : ["", "", "1st level", "1st level", "1st level", "2nd level", "2nd level", "2nd level", "2nd level", "3rd level", "3rd level", "3rd level", "3rd level", "3rd level", "4th level", "4th level", "4th level", "5th level", "5th level", "5th level"],
 			},
+			"subclassfeature3.2" : {
+				name : "Bond Spells",
+				source : ["HB", 0],
+				minlevel : 3,
+				description : "\n   " + "I can cast each of my spells gained from this subclass once at their lowest level without expending a spell slot or material components. Once I do, I can't do so again until you finish a long rest.",
+			},
 			"subclassfeature6" : {
 				name : "Expertise",
 				source : ["HB", 0],
@@ -610,6 +636,12 @@ AddSubClass(
 				source : ["HB", 0],
 				minlevel : 3,
 				description : "\n   " + "I can now add my spellcasting ability modifier to the result of any death saving throw, Strength check, or Dexterity check I make.",
+			},
+			"subclassfeature3.1" : {
+				name : "Bond Spells",
+				source : ["HB", 0],
+				minlevel : 3,
+				description : "\n   " + "I can cast each of my spells gained from this subclass once at their lowest level without expending a spell slot or material components. Once I do, I can't do so again until you finish a long rest.",
 			},
 			"subclassfeature6" : {
 				name : "Part of Me",
