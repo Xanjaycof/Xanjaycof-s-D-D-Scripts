@@ -9,7 +9,7 @@ ClassList["kanala"] = {
 
 	source : ["HB", 0],
 
-	primaryAbility : "Strength or Dexterity",
+	primaryAbility : "Varies",
 
 	prereqs : "Strength 13 or Dexterity 13",
 
