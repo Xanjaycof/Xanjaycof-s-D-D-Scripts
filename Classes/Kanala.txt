@@ -1,6 +1,12 @@
 var iFileName = "Homebrew Syntax - Kanala Class.js";
 RequiredSheetVersion(13);
 
+[//kanala spells
+	"color spray", "comprehend languages", "cure wounds", "detect evil and good", "detect magic", "detect poison and disease", "disguise self", "expeditious retreat", "inflict wounds", "jump", "longstrider", "made armor", "shield", "thunderwave", "alter self", "barkskin", "blur", "darkvision", "enhance ability", "flame blade", "invisibility", "lesser restoration", "magic weapon", "mirror image", "misty step", "pass without trace", "protection from poison", "see invisiblity", "spider climb", "bestow curse", "blink", "fear", "protection from energy", "remove curse", "revivify", "tongues", "vampiric touch", "death ward", "fire shield", "freedom of movement", "stone shape", "stoneskin", "cone of cold", "greater restoration", "mislead", "raise dead"
+].forEach( function (s) {
+	if(SpellsList[s] && SpellsList[s].classes && SpellsList[s].classes.indexOf("kanala") === -1) SpellsList[s].classes.push("kanala");
+});
+
 ClassList["kanala"] = {
 
 	name : "Kanala",
@@ -118,21 +124,6 @@ ClassList["kanala"] = {
 				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
 				recovery : "long rest",
 				action : ["bonus action"]
-			},
-		},
-
-		"pact magic" : {
-			name : "Pact Magic",
-			source : ["HB", 0],
-			minlevel : 1,
-			description : "\n   " + "I can use my gift to cast spells. However, my magic does not appear in the same way as that of wizards or sorcerers; instead, casting a spell causes my locus to coalesce or alter its appearance as the magic physically flows out from it. My magical effects are produced through my locus, as such, I must have an empty hand when I cast any spell.",
-			spellcastingBonus : {
-
-				spells : ["color spray", "comprehend languages", "cure wounds", "detect evil and good", "detect magic", "detect poison and disease", "disguise self", "expeditious retreat", "inflict wounds", "jump", "longstrider", "made armor", "shield", "thunderwave", "alter self", "barkskin", "blur", "darkvision", "enhance ability", "flame blade", "invisibility", "lesser restoration", "magic weapon", "mirror image", "misty step", "pass without trace", "protection from poison", "see invisiblity", "spider climb", "bestow curse", "blink", "fear", "protection from energy", "remove curse", "revivify", "tongues", "vampiric touch", "death ward", "fire shield", "freedom of movement", "stone shape", "stoneskin", "cone of cold", "greater restoration", "mislead", "raise dead"],
-
-				times : [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11],
-
-				prepared : true,
 			},
 		},
 
