@@ -7,5 +7,9 @@ As of currently writing this README, I have created the following:
 <br>2 Races (and 3 Subraces)
 <br>1 Variant Race
 <br>17 Subclasses
-<br>2 Creatures
+<br>39 Creatures
 <br>2 Backgrounds
+<br>8 Feats
+<br>13 Weapons
+<br>6 Spells
+<br>11 Magic Items
