@@ -3,11 +3,11 @@ Welcome to this repository, not as expansive as it should be, but with due time,
 
 As of currently writing this README, I have created the following:
 
-14 Classes (and 12 Class Feature Variations)
-<br>3 Races (and 9 Subraces)
-<br>1 Variant Race
+17 Classes (and 21 Class Feature Variations)
+<br>12 Races (and 23 Subraces)
+<br>2 Variant Races
 <br>17 Subclasses
-<br>64 Creatures
+<br>74 Creatures
 <br>2 Backgrounds
 <br>49 Feats
 <br>13 Weapons
