@@ -9,9 +9,9 @@ As of currently writing this README, I have created the following:
 <br>37 Subclasses
 <br>163 Creatures
 <br>9 Backgrounds
-<br>170 Feats
+<br>410 Feats
 <br>21 Weapons
 <br>157 Spells
-<br>55 Magic Items
+<br>299 Magic Items
 <br>7 (Pieces of) Armor
 <br>2 (Separate instances of) Gear
