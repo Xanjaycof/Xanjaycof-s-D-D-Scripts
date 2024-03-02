@@ -1,0 +1,3533 @@
+var iFileName = "Homebrew Syntax - The Great Wyrm Code.js";
+RequiredSheetVersion(13);
+
+SourceList["TGW"] = {
+
+	name : "The Great Wyrm",
+
+	abbreviation : "TGW",
+
+	date : "2023/01/01",
+
+	group : "r/UnearthedArcana",
+
+	url : "https://www.reddit.com/r/UnearthedArcana/comments/100uchh/the_great_wyrm_v50_a_unique_race_with_its_own/",
+}
+
+RaceList["dragon wyrmling, amethyst"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*amethyst).*$/i,
+
+	name : "Amethyst Dragon Wyrmling",
+
+	sortname : "Dragon, Amethyst Wyrmling",
+
+	source : ["TGW", 3],
+
+	plural : "Amethyst Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		swim : { spd : "walk", enc : 0 }
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Amethyst Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Amethyst Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nAmphibious: I can breathe both air and water.\nDamage Immunity: I'm immune to force damage.\nSingularity Breath: As an action, I create a shining bead of gravitational force in my mouth, releasing the energy in a 15-foot cone. Each creature in the area mustmake a Strength saving throw against my save DC. On a failed save, the creature takes 2d6 force damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"singularity breath" : {
+			name : "Singularity Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, black"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*black).*$/i,
+
+	name : "Black Dragon Wyrmling",
+
+	sortname : "Dragon, Black Wyrmling",
+
+	source : ["TGW", 4],
+
+	plural : "Black Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		swim : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Black Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Black Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to acid damage.\nAmphibious: I can breathe both air and water.\nAcid Breath: As an action, I exhale acid in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save, the creature takes 2d6 acid damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"acid breath" : {
+			name : "Acid Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, blue"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*blue).*$/i,
+
+	name : "Blue Dragon Wyrmling",
+
+	sortname : "Dragon, Blue Wyrmling",
+
+	source : ["TGW", 4],
+
+	plural : "Blue Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		burrow : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Blue Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Blue Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to lightning damage.\nMimicry: I can mimic any sounds I have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful Insight check against my save DC.\nLightning Breath: As an action, I exhale lightning in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save the creature takes 2d6 lightning damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"lightning breath" : {
+			name : "Lightning Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, brass"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*brass).*$/i,
+
+	name : "Brass Dragon Wyrmling",
+
+	sortname : "Dragon, Brass Wyrmling",
+
+	source : ["TGW", 4],
+
+	plural : "Brass Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		burrow : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Brass Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Brass Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to fire damage.\nMimicry: I can mimic any sounds I have heard, including voices. A creature that hears the sounds can tell they are imitations with a successful Insight check against my save DC.\nFire Breath: As an action, I exhale fire in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save the creature takes 2d6 fire damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"fire breath" : {
+			name : "Fire Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, bronze"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*bronze).*$/i,
+
+	name : "Bronze Dragon Wyrmling",
+
+	sortname : "Dragon, Bronze Wyrmling",
+
+	source : ["TGW", 4],
+
+	plural : "Bronze Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		swim : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Bronze Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Bronze Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to lightning damage.\nAmphibious: I can breathe both air and water.\nLightning Breath: As an action, I exhale lightning in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save the creature takes 2d6 lightning damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"lightning breath" : {
+			name : "Lightning Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, copper"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*copper).*$/i,
+
+	name : "Copper Dragon Wyrmling",
+
+	sortname : "Dragon, Copper Wyrmling",
+
+	source : ["TGW", 5],
+
+	plural : "Copper Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		climb : { spd : "walk", enc : 0 },
+
+		fly : { spd : 30, enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	skills : ["Performance", "Deception"],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Copper Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Copper Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to acid damage.\nAcid Breath: As an action, I exhale acid in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save the creature takes 2d6 acid damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"acid breath" : {
+			name : "Acid Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, crystal"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*crystal).*$/i,
+
+	name : "Crystal Dragon Wyrmling",
+
+	sortname : "Dragon, Crystal Wyrmling",
+
+	source : ["TGW", 5],
+
+	plural : "Crystal Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		climb : { spd : "walk", enc : 0 },
+
+		fly : { spd : 30, enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Crystal Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Crystal Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to radiant damage.\nScintillating Breath: As an action, I exhale a burst of brilliant radiance in a 15-foot cone. Each creature in the area must make a Constitution saving throw against my save DC. On a failed save, the creature takes 2d6 radiant damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	spellcastingAbility : 3,
+
+	spellcastingBonus : {
+
+		name : "Inner Light",
+
+		spells : ["dancing lights"],
+
+		selection : ["dancing lights"],
+
+		times : 1,
+
+		prepared : true,
+
+		atwill : true,
+	},
+
+	features : {
+
+		"scintillating breath" : {
+			name : "Scintillating Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, deep"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*deep).*$/i,
+
+	name : "Deep Dragon Wyrmling",
+
+	sortname : "Dragon, Deep Wyrmling",
+
+	source : ["TGW", 5],
+
+	plural : "Deep Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		burrow : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Deep Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Deep Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to psychic damage.\nFrightening: Creatures have disadvantage on saving throws made against being frightened of me.\nNightmare Breath: As an action, I exhale a cloud of spores in a 15-foot cone. Each creature in the area mustmake a Wisdom saving throw against my save DC. On a failed save, the creature takes 2d6 psychic damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"nightmare breath" : {
+			name : "Nightmare Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, emerald"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*emerald).*$/i,
+
+	name : "Emerald Dragon Wyrmling",
+
+	sortname : "Dragon, Emerald Wyrmling",
+
+	source : ["TGW", 5],
+
+	plural : "Emerald Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		burrow : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Emerald Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Emerald Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to psychic damage.\nTunneler: I can burrow through solid rock at half my burrowing speed and leave a 5-foot-diameter tunnel in my wake.\nDisorienting Breath: As an action, I exhale a wave of psychic dissonance in a 15-foot cone. Each creature in the area must make an Intelligence saving throw against my save DC. On a failed save, the creature takes 2d6 psychic damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"disorienting breath" : {
+			name : "Disorienting Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, gold"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*gold).*$/i,
+
+	name : "Gold Dragon Wyrmling",
+
+	sortname : "Dragon, Gold Wyrmling",
+
+	source : ["TGW", 5],
+
+	plural : "Gold Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		swim : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Gold Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Gold Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to fire damage.\nAmphibious: I can breathe both air and water.\nFire Breath: As an action, I exhale fire in a 15-foot cone. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save, the creature takes 2d6 fire damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"fire breath" : {
+			name : "Fire Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, green"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*green).*$/i,
+
+	name : "Green Dragon Wyrmling",
+
+	sortname : "Dragon, Green Wyrmling",
+
+	source : ["TGW", 6],
+
+	plural : "Green Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		swim : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Green Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Green Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to poison damage.\nAmphibious: I can breathe both air and water.\nPoison Breath: As an action, I exhale poisonous gas in a 15-foot cone. Each creature in the area must make a Constitution saving throw against my save DC. On a failed save the creature takes 2d6 poison damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"poison breath" : {
+			name : "Poison Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, lunar"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*lunar).*$/i,
+
+	name : "Lunar Dragon Wyrmling",
+
+	sortname : "Dragon, Lunar Wyrmling",
+
+	source : ["TGW", 6],
+
+	plural : "Lunar Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		burrow : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Lunar Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Lunar Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to cold damage.\nTunneler: I can burrow through solid rock at half my burrowing speed and leave a 5-foot-diameter tunnel in my wake.\nCold Breath: As an action, I exhale a blast of frost in a 15-foot cone. Each creature in the area must make a Constitution saving throw against my save DC. On a failed save the creature takes 2d6 cold damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"cold breath" : {
+			name : "Cold Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, moonstone"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*moonstone).*$/i,
+
+	name : "Moonstone Dragon Wyrmling",
+
+	sortname : "Dragon, Moonstone Wyrmling",
+
+	source : ["TGW", 6],
+
+	plural : "Moonstone Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		climb : { spd : "walk", enc : 0 },
+
+		fly : { spd : 30, enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	savetxt : {
+
+		adv_vs : ["charmed"]
+	},
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Moonstone Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Moonstone Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to radiant damage.\nMoonlight Breath: As an action, I exhale a beam of moonlight in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save, the creature takes 2d6 radiant damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"moonlight breath" : {
+			name : "Moonlight Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, red"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*red).*$/i,
+
+	name : "Red Dragon Wyrmling",
+
+	sortname : "Dragon, Red Wyrmling",
+
+	source : ["TGW", 6],
+
+	plural : "Red Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		climb : { spd : "walk", enc : 0 },
+
+		fly : { spd : 30, enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Red Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Red Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to fire damage.\nFire Breath: As an action, I exhale fire in a 15-foot cone. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save, the creature takes 2d6 fire damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	spellcastingAbility : 3,
+
+	spellcastingBonus : {
+
+		name : "Avarice",
+
+		spells : ["identify"],
+
+		selection : ["identify"],
+
+		times : 1,
+
+		prepared : true,
+
+		oncelr : true,
+	},
+
+	spellChanges : {
+		"identify" : {
+			components : "V,S",
+			changes : "Does not need to be casted with material components."
+		}
+	},
+
+	features : {
+
+		"fire breath" : {
+			name : "Fire Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, sapphire"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*sapphire).*$/i,
+
+	name : "Sapphire Dragon Wyrmling",
+
+	sortname : "Dragon, Sapphire Wyrmling",
+
+	source : ["TGW", 7],
+
+	plural : "Sapphire Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		burrow : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Sapphire Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Sapphire Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to thunder damage.\nTunneler: I can burrow through solid rock at half my burrowing speed and leave a 5-foot-diameter tunnel in my wake.\nDebilitating Breath: As an action, I exhale a pulse of high-pitched, nearly inaudible sound in a 15-foot cone. Each creature in the area must make a Constitution saving throw against my save DC. On a failed save, the creature takes 2d6 thunder damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"debilitating breath" : {
+			name : "Debilitating Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, silver"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*silver).*$/i,
+
+	name : "Silver Dragon Wyrmling",
+
+	sortname : "Dragon, Silver Wyrmling",
+
+	source : ["TGW", 7],
+
+	plural : "Silver Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		climb : { spd : "walk", enc : 0 },
+
+		fly : { spd : 30, enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	skills : ["Performance", "Persuasion"],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Silver Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Silver Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to cold damage.\nCold Breath: As an action, I exhale an icy blast in a 15-foot cone. Each creature in the area must make a Constitution saving throw against my save DC. On a failed save the creature takes 2d6 cold damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"cold breath" : {
+			name : "Cold Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, solar"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*solar).*$/i,
+
+	name : "Solar Dragon Wyrmling",
+
+	sortname : "Dragon, Solar Wyrmling",
+
+	source : ["TGW", 7],
+
+	plural : "Solar Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Solar Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Solar Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to radiant damage.\nSpaceflight: I can hover.\nNebulous Thoughts: Magical attempts to read my mind or glean my thoughts automatically fail.\nPhotonic Breath: As an action, I exhale a flashing mote of radiant energy that travels to a point I can see within 30 feet of me, it then blossoms into a 10-foot-radius sphere centered on that point. Each creature in the sphere must make a Constitution saving throw against my save DC. On a failed save, the creature takes 2d6 radiant damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"photonic breath" : {
+			name : "Photonic Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, solhalysis"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*solhalysis).*$/i,
+
+	name : "Solhalysis Dragon Wyrmling",
+
+	sortname : "Dragon, Solhalysis Wyrmling",
+
+	source : ["TGW", 7],
+
+	plural : "Solhalysis Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		burrow : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	savetxt : {
+
+		immune : ["grappled"]
+	},
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Solhalysis Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Solhalysis Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to fire damage.\nPlasma Breath: As an action, I exhale a beam of superheated plasma in a 30-foot line that is 5 feet wide. Each creature in the area must make a Dexterity saving throw against my save DC. On a failed save, the creature takes 2d6 fire damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"plasma breath" : {
+			name : "Plasma Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, topaz"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*topaz).*$/i,
+
+	name : "Topaz Dragon Wyrmling",
+
+	sortname : "Dragon, Topaz Wyrmling",
+
+	source : ["TGW", 7],
+
+	plural : "Topaz Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		swim : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "Topaz Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "Topaz Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to necrotic damage.\nAmphibious: I can breathe both air and water.\nDesiccating Breath: As an action, I exhale yellowish necrotic energy in a 15-foot cone. Each creature in the area must make a Constitution saving throw against my save DC. On a failed save, the creature takes 2d6 necrotic damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"desiccating breath" : {
+			name : "Desiccating Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+RaceList["dragon wyrmling, white"] = {
+
+	regExpSearch : /^(?=.*dragon)(?=.*wyrmling)(?=.*white).*$/i,
+
+	name : "White Dragon Wyrmling",
+
+	sortname : "Dragon, White Wyrmling",
+
+	source : ["TGW", 7],
+
+	plural : "White Dragon Wyrmlings",
+
+	size : 3,
+
+	speed : {
+
+		walk : { spd : 30, enc : 20 },
+
+		fly : { spd : 30, enc : 0 },
+
+		swim : { spd : "walk", enc : 0 },
+	},
+
+	languageProfs : ["Common", "Draconic"],
+
+	weaponsAdd : ["Bite", "Claws"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /bite/i,
+		name : "Bite",
+		source : ["TGW", 3],
+		damage : [1, 6, "piercing"]
+	},
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /claws/i,
+		name : "Claws",
+		source : ["TGW", 3],
+		ability : 2,
+		damage : [1, 6, "slashing"]
+	},
+
+	extraAC : [{
+		mod : "Con",
+		magic : false,
+		text : "I add my Constitution modifier to my AC while I'm not wearing armor.",
+		stopeval : function (v) { return v.wearingArmor; }
+	}],
+
+	vision : [["Darkvision", 60]],
+
+	age : " remains a wyrmling anywhere from ten years to a number of decades.",
+
+	height : " stand between 4-5 feet tall at their shoulders, with a comparable wingspan and length.",
+
+	weight : " weigh around 200 lbs.",
+
+	improvements : "White Dragon Wyrmling: None;",
+
+	scores : [0, 0, 0, 0, 0, 0],
+
+	trait : "White Dragon Wyrmling (None)\nCreature Type: I'm considered a dragon instead of a humanoid.\nDamage Immunity: I'm immune to cold damage.\nIce Walk: I can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn't cost me extra movement.\nCold Breath: As an action, I exhale an icy blast in a 15-foot cone. Each creature in the area must make a Constitution saving throw against my save DC. On a failed save, the creature takes 2d6 cold damage, or half as much on a successful save.",
+
+	abilitySave : 3,
+
+	features : {
+
+		"cold breath" : {
+			name : "Cold Breath",
+			minlevel : 1,
+			usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+			additional : ["2d6", "2d6", "2d6", "2d6", "3d6", "3d6", "3d6", "3d6", "4d6", "4d6", "4d6", "4d6", "5d6", "5d6", "5d6", "5d6", "6d6", "6d6", "6d6", "6d6"],
+			recovery : "long rest",
+			tooltip : "",
+			action : ["action"],
+		},
+	}
+};
+
+ClassList["great wyrm"] = {
+
+	name : "Great Wyrm",
+
+	regExpSearch : /^(?=.*great)(?=.*wyrm).*$/i,
+
+	source : ["TGW", 8],
+
+	primaryAbility : "Constitution",
+
+	prereqs : "Dragon Wyrmling race",
+
+	die : 8,
+
+	improvements : [0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5],
+
+	saves : ["Str", "Con"],
+
+	skills : ["\n\n" + toUni("Great Wyrm") + ": Choose two from Acrobatics, Arcana, Athletics, Insight, Intimidation, Nature, Perception, Persuasion, Stealth, and Survival.", "\n\n" + toUni("Great Wyrm") + ": Choose two from Acrobatics, Arcana, Athletics, Insight, Intimidation, Nature, Perception, Persuasion, Stealth, and Survival."],
+
+	armor : [
+		[false, false, false, false],
+		[false, false, false, false]
+	],
+
+	weapons : [
+		[false, false, false],
+		[false, false, false]
+	],
+
+	equipment : "Great Wyrm starting equipment:\n \u2022 5d4 * 10 gold pieces.",
+
+	subclasses : ["Draconic Ancestry", []],
+
+	attacks : [1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+
+	features : {
+
+		"subclassfeature1" : {
+			name : "Draconic Ancestry",
+			source : ["TGW", 9],
+			minlevel : 1,
+			description : "\n   " + "I gain access to power my draconic ancestors have held for generations.",
+		},
+
+		"draconic evolution" : {
+			name : "Draconic Evolution",
+			source : ["TGW", 9],
+			minlevel : 1,
+			description : "\n   " + "I know two Draconic Traits at 1st level and can gain more at certain levels. Some traits replace traits I already have. When I take one of these replacement traits, I'm able to take another trait that doesn't replace one I already have. Whenever I'm given the option to take a feat, I can choose to instead gain a new Draconic Trait instead.",
+			extraname : "Draconic Traits",
+			extrachoices : ["Absolute Terror (prereq: Ancient Advancement and Frightful Presence)", "Adamantine Sheen (prereq: A natural AC of 17 or higher)", "Adrenaline Rush", "Adult Exhalation Upgrade (prereq: Adult Advancement and Young Exhalation Upgrade)", "Ambush Wyrm (prereq: Stealth proficiency)", "Amethyst Psionics (prereq: Young Advancement and Amethyst Dragon Wyrmling)", "Ancient Exhalation Upgrade (prereq: Ancient Advancement and Adult Exhalation Upgrade)", "Arcane Tactician (prereq: 11th level and Dragon Mage Ancestry)", "Archaic Arcanum (prereq: Dragon Mage Ancestry)", "Armored Horns", "Armored Scales (prereq: Young Advancement)", "Battering Ram (prereq: 5th level and Armored Horns)", "Blend with the Dead (prereq: Dracolich Ancestry)", "Bloodline Potential (prereq: 9th level and Dragon Mage Ancestry)", "Bloodline Strikes (prereq: Variable Appendages)", "Bloodscale Magery (prereq: Bloodscale Ancestry)", "Breathing Technique (prereq: 5th level and not a Solar Dragon Wyrmling)", "Brutal Serrations (prereq: 9th level)", "Bulky Build (prereq: Strength 13 or higher)", "Caustic Breath (prerqe: 15th level)", "Chameleon Scales (prereq: Nature and Stealth proficiency)", "Cold Immunity (prereq: 9th level and Crystal or Topaz Dragon Wyrmling)", "Constrictor (prereq: 5th level and Powerful Tail)", "Crystal Psionics (prereq: Young Advancement and Crystal Dragon Wyrmling)", "Deadly Spines (prereq: 3rd level)", "Debilitating Pitch (prereq: Adult Advancement and Sapphire Dragon Wyrmling)", "Debris Storm (prereq: 10th level)", "Desiccating Gas (prereq: Adult Advancement and Topaz Dragon Wyrmling)", "Disorienting Dissonance (prereq: Adult Advancement and Emerald Dragon Wyrmling)", "Draconic Knowledge", "Dragon Engine (prereq: Young Advancement)", "Dragon's Aid", "Dragon's Immutability (prereq: Shape Changer)", "Dragon's Vitaltiy (prereq: Adult Advancement and Increased Vitality)", "Early Warning System", "Eldersong Spellcasting (prereq: Song Dragon Ancestry)", "Elemental Carvings (prereq: 9th level and Hidecarved Ancestry)", "Elemental Fangs (prereq: Young Advancement)", "Emerald Psionics (prereq: Young Advancement and Emerald Dragon Wyrmling)", "Empowered Breath (prereq: 4th level)", "Empowered Shadows (prereq: 7th level and Shadow Dragon Ancestry)", "Enhanced Senses", "Eternal Vigor (prereq: 4th level)", "Expanded Casing (prereq: 3rd level and Dracolich Ancestry)", "Eyes of the Shadestalker (prereq: Shadow Dragon Ancestry)", "Eyes on the Prize (prereq: 5th level)", "Fear Expansion (prereq: Adult Advancement and Frightful Presence)", "Fire Extinguisher (prereq: Cold Breath)", "Fire Immunity (prereq: 9th level and Emerald Dragon Wyrmling)", "Flexible Maw (prereq: 4th level)", "Flyby (prereq: 7th level)", "Forest Ruler (prereq: 3rd level and Green Dragon Wyrmling)", "Frightful Fury (prereq: Bloodscale Ancestry and Frightful Presence)", "Frightful Presence (prereq: Young Advancement)", "Frozen in Fear (prereq: 13th level and Frightful Presence)", "Hidecarved Resistance (prereq: 7th level and Hidecarved Ancestry)", "Hivemind Dragon (prereq: Solhalysis Dragon Wyrmling)", "Honed Craft", "Hunger of the Void (prereq: Voidmaw Ancestry)", "Impenetrable Armored Scales (prereq: Ancient Advancement and Reinforced Armored Scales)", "Impotable (prereq: 5th level and Black Dragon Wyrmling)", "Increased Vitality (prereq: Young Advancement)", "Iron Grip (prereq: 7th level)", "Keratinous Growth (prereq: Young Advancement)", "Legendary Resistance (prereq: Adult Advancement)", "Lightning Immunity (prereq: 9th level and Sapphire Dragon Wyrmling)", "Lost Crescendo (prereq: 15th level and Song Dragon Ancestry)", "Lunar Phases (prereq: 9th level and Lunar Dragon Wyrmling)", "Magma Diver (prereq: Red Dragon Wyrmling)", "Moonsilver Strikes (prereq: Lunar Dragon Wyrmling)", "Natural Magic", "Nightmare Fuel (prereq: 3rd level and Deep Dragon Wyrmling)", "Old Blood Scalation", "Organic Weaponry (prereq: Ancient Advancement and Sharp as Steel)", "Paralyzing Breath (prereq: Young Advancement and Silver Dragon Wyrmling)", "Poison Immunity (prereq: 9th level and Deep Dragon Wyrmling)", "Powerful Tail", "Psychic Immunity (prereq: 9th level and Amethyst Dragon Wyrmling)", "Quick Claws (prereq: 3rd level)", "Reflexes of the Ancients", "Reinforced Armored Scales (prereq: Adult Advancement)", "Relentless Exhalation (prereq: 10th level)", "Repulsion Breath (prereq: Young Advancement and Bronze Dragon Wyrmling)", "Sandstorm (prereq: 3rd level and Blue Dragon Wyrmling)", "Sapphire Psionics (prereq: Young Advancement and Sapphire Dragon Wyrmling)", "Scintillating Radiance (prereq: Adult Advancment and Crystal Dragon Wyrmling)", "Shadow Puppeteer (prereq: 10th level and Shadow Dragon Ancestry)", "Shape Changer", "Sharp as Steel (prereq: Adult Advancement and Keratinous Growth)", "Singularity's Pull (prereq: Adult Advancement and Amethyst Dragon Wyrmling)", "Size Matters (prereq: Young Advancement)", "Sleep Breath (prereq: Young Advancement and Brass or Moonstone Dragon Wyrmling)", "Slowing Breath (prereq: Young Advancement and Copper Dragon Ancestry)", "Spell Repellent (prereq: 13th level and Bloodscale Ancestry)", "Spellsong Reflexes (prereq: 3rd level and Song Dragon Ancestry)", "Spontaneous Revival (prereq: 5th level and Dracolich Ancestry)", "Starstorm (15th level and Solar Dragon Wyrmling)", "Sticky Pads (prereq: Any natural climbing speed)", "Sun Spots (prereq: 9th level and Solar Dragon Wyrmling)", "Swift Reflexes", "Tail Sweep (prereq: 5th level and Powerful Tail)", "The Shadowfell Approaches (prereq: 3rd level and Shadow Dragon Ancestry)", "Topaz Psionics (prereq: Young Advancement and Topaz Dragon Wyrmling)", "Twinned Resonance (prereq: 7th level and Song Dragon Ancestry)", "Undead Viscount (prereq: 9th level and Dracolich Ancestry)", "Unknowable Etchings (prereq: 5th level and Hidecarved Ancestry)", "Unifying Orator (prereq: 10th level and Song Dragon Ancestry)", "Unrelenting Force (prereq: 5th level and Hidecarved Ancestry)", "Variable Appendages", "Venemous Fangs", "Vent Heat (prereq: Young Advancement and Solhalysis Dragon Wyrmling)", "Vibrational Senses (prereq: Any natural burrow speed)", "Vicious Assault (prereq: 3rd level)", "Waking Nightmare (prereq: Young Advancement and Deep Dragon Wyrmling)", "Wandering Wyrm", "Weakening Breath (prereq: Young Advancement and Gold Dragon Wyrmling)", "Weight Training (prereq: Bulky Build)", "Winding Coils (prereq: Dexterity 17 or higher)", "Wing Attack (13th level)", "Wing Shield", "Winter Wonderland (9th level and White Dragon)", "Young Exhalation Upgrade (prereq: Young Advancement)"],
+			extraTimes : levels.map(function (n) {
+				return n < 1 ? 1 : n < 3 ? 2 : n < 5 ? 3 : n < 7 ? 4 : n < 9 ? 5 : n < 11 ? 6 : n < 13 ? 7 : n < 15 ? 8 : n < 17 ? 9 : n < 19 ? 10 : 11;
+			}),
+			"absolute terror (prereq: ancient advancement and frightful presence)" : {
+				name : "Absolute Terror",
+				source : ["TGW", 21],
+				description : "\n   " + "The range of my \"Frightful Presence\" is now 120 feet.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 18 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'frightful presence (prereq: young advancement)'; },
+			},
+
+			"adamantine sheen (prereq: a natural ac of 17 or higher)" : {
+				name : "Adamantine Sheen",
+				source : ["TGW", 21],
+				description : "\n   " + "Any critical hit scored against me is treated as a normal hit.",
+			},
+
+			"adrenaline rush" : {
+				name : "Adrenaline Rush",
+				source : ["TGW", 21],
+				description : "\n   " + "I can take the Dash action as a bonus action.",
+			},
+
+			"adult exhalation upgrade (prereq: adult advancement and young exhalation upgrade)" : {
+				name : "Adult Exhalation Upgrade",
+				source : ["TGW", 21],
+				description : "\n   " + "The damage dice of my breath weapon becomes d10's. This trait replaces the \"Young Exhalation Upgrade\" trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'young exhalation upgrade (prereq: young advancement)'; },
+			},
+
+			"ambush wyrm (prereq: stealth proficiency)" : {
+				name : "Ambush Wyrm",
+				source : ["TGW", 21],
+				description : "\n   " + "I can hide as a bonus action and moving silently does not cost me extra movement.",
+			},
+
+			"amethyst psionics (prereq: young advancement and amethyst dragon wyrmling)" : {
+				name : "Amethyst Psionics",
+				source : ["TGW", 21],
+				description : "\n   " + "I can cast the blink and dispel magic spells once per day each with this trait. I can also cast either of those spells using any spell slots I have of the appropriate level. Charisma is my spellcasting ability for these spells when I cast them with this trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, amethyst') !== -1; },
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "Amethyst Psionics",
+
+					spells : ["blink", "dispel magic"],
+
+					selection : ["blink", "dispel magic"],
+
+					times : 2,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"ancient exhalation upgrade (prereq: ancient advancement and adult exhalation upgrade)" : {
+				name : "Ancient Exhalation Upgrade",
+				source : ["TGW", 21],
+				description : "\n   " + "The damage dice of my breath weapon become d12's. This trait replaces the \"Adult Exhalation Upgrade\" trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 18 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'adult exhalation upgrade (prereq: adult advancement and young exhalation upgrade)'; },
+			},
+
+			"arcane tactician (prereq: 11th level and dragon mage ancestry)" : {
+				name : "Arcane Tactician",
+				source : ["TGW", 21],
+				description : "\n   " + "I learn the counterspell and dispel magic spells. These do not count against the number of dragon mage spells I know.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 11 && (/dragon mage/i).test(classes.known['great wyrm'].subclass); },
+				spellcastingBonus : {
+
+					name : "Arcane Tactician",
+
+					spells : ["counterspell", "dispel magic"],
+
+					selection : ["counterspell", "dispel magic"],
+
+					times : 2,
+
+					prepared : true,
+				},
+			},
+
+			"archaic arcanum (prereq: dragon mage ancestry)" : {
+				name : "Archaic Arcanum",
+				source : ["TGW", 21],
+				description : "\n   " + "I learn two spells of my choice from any class spell list. These two spells count as dragon mage spells for me and doesn't count against the number of dragon mage spells I know. These spells must be of a level which I can cast. I learn an additional two spells at 5th, 9th, 13th, and 17th levels. When I gain new spells with this trait, I can replace them with other spells of my choice that are of a spell level I can cast.",
+				prereqeval : function(v) { return (/dragon mage/i).test(classes.known['great wyrm'].subclass); },
+				spellcastingBonus : {
+
+					name : "Archaic Arcanum",
+
+					class : ["artificer", "bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"],
+
+					level : [0, 5],
+
+					times : ["fixed 2", "fixed 2", "fixed 2", "fixed 2", "fixed 4", "fixed 4", "fixed 4", "fixed 6", "fixed 6", "fixed 6", "fixed 6", "fixed 8", "fixed 8", "fixed 8", "fixed 8", "fixed 10", "fixed 10", "fixed 10", "fixed 10"],
+
+					prepared : true,
+				},
+			},
+
+			"armored horns" : {
+				name : "Armored Horns",
+				source : ["TGW", 21],
+				description : "\n   " + "My horns are sturdy enough to use as weapons. I have a reach of 5 feet with them and they use my Strength for its ability modifier. On a hit, the horns deals 1d6 + my Strength modifier bludgeoning damage. A creature hit by my horns must make a Strength saving throw against my save DC. On a failed save, it is pushed back 5 feet.",
+				weaponsAdd : ["Horns"],
+				weaponOptions : {
+					baseWeapon : "unarmed strike",
+					regExpSearch : /horns/i,
+					name : "Horns",
+					source : ["TGW", 21],
+					damage : [1, 6, "bludgeoning"]
+				},
+			},
+
+			"armored scales (prereq: young advancement)" : {
+				name : "Armored Scales",
+				source : ["TGW", 21],
+				description : "\n   " + "My AC is now equal to 10 + my Dexterity Modifier + my Constitution modifier.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"battering ram (prereq: 5th level and armored horns)" : {
+				name : "Battering Ram",
+				source : ["TGW", 21],
+				description : "\n   " + "If I move at least 20 feet straight towards a target and then hit it with a horn attack on the same turn, the target takes an extra 2d6 bludgeoning damage. If the target is a creature, it must succeed on a Strength saving throw against my save DC or be knocked prone. Structures I hit with this trait take double damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'armored horns'; },
+			},
+
+			"blend with the dead (prereq: dracolich ancestry)" : {
+				name : "Blend with the Dead",
+				source : ["TGW", 21],
+				description : "\n   " + "Undead creatures not under my control ignore me unless their controller commands them to attack me, or I harm them.",
+				prereqeval : function(v) { return (/dracolich/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"bloodline potential (prereq: 9th level and dragon mage ancestry)" : {
+				name : "Bloodline Potential",
+				source : ["TGW", 21],
+				description : "\n   " + "I learn one 1st-level spell, one 2nd-level spell, and one 3rd-level spell of my choice from any spell list. These spells must require an attack roll or saving throw and they must deal the same type of damage as my breath weapon. These spells do not count against the number of dragon mage spells I know.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && (/dragon mage/i).test(classes.known['great wyrm'].subclass); },
+				spellcastingBonus : [{
+					name : "1st-level",
+					class : ["artificer", "bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"],
+
+					level : 1,
+					firstCol : 1
+				}, {
+					name : "2nd-level",
+					class : ["artificer", "bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"],
+
+					level : 2,
+					firstCol : 2
+				}, {
+					name : "3rd-level",
+					class : ["artificer", "bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"],
+
+					level : 3,
+					firstCol : 3
+				}]
+			},
+
+			"bloodline strikes (prereq: variable appendages)" : {
+				name : "Bloodline Strikes",
+				description : "\n   " + "I can use my Charisma modifier, instead of Strength or Dexterity, for the attack and damage rolls of my natural weapons.",
+				prereqeval : function(v) { return GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'varibale appendages'; },
+			},
+
+			"bloodscale magery (prereq: bloodscale ancestry)" : {
+				name : "Bloodscale Magery",
+				source : ["TGW", 22],
+				description : "\n   " + "I learn the blood bolt and sanguine slash cantrips. Starting at 3rd level, I can cast the sanguine senses spell with this trait. At 5th level, I can cast the tendrils of ichor spell with this trait. I can cast these spells without the need for material components, and I can cast these spells even while in a blood fury. Once I cast any of the above spells with this trait, I can't cast that spell with this trait again until I finish a long rest. I can also cast the spells using any spell slots I have of the appropriate level.",
+				prereqeval : function(v) { return (/bloodscale/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"breathing technique (prereq: 5th level and not a solar dragon wyrmling)" : {
+				name : "Breathing Technique",
+				source : ["TGW", 22],
+				description : "\n   " + "When I use my breath weapon, I can choose to sustain it for a number of rounds equal to my Constitution modifier (minimum 1). When I do, my movement speed becomes 0, and I can spend my action each turn continuing the exhalation. When I spend my action to do so, each creature within the area repeats the saving throw against my breath weapon. While channeling my breath in this way, I can use my bonus action before sustaining my breath to shift my body and move the breath into a new orientation, potentially putting new creatures into its area. Once I have used this trait, I can't do so again until I finish a long rest.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5; },
+				usages : 1,
+				recovery : "long rest",
+			},
+
+			"brutal serrations (prereq: 9th level)" : {
+				name : "Brutal Serrations",
+				source : ["TGW", 22],
+				description : "\n   " + "I can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9; },
+			},
+
+			"bulky build (prereq: strength 13 or higher)" : {
+				name : "Bulky Build",
+				source : ["TGW", 22],
+				description : "\n   " + "I count as one size larger when determining my carrying capacity and the weight I can push, drag, or lift. Additionally, if my size is Medium, I can act as a mount for a Medium creature without any penalties.",
+				prereqeval : function(v) { return What('Str') >= 13; }
+			},
+
+			"caustic breath (prerqe: 15th level)" : {
+				name : "Caustic Breath",
+				source : ["TGW", 22],
+				description : "\n   " + "Whenever the damage from my breath weapon drops a creature to 0 HP, it instantly dies and its body is destroyed.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 15; },
+			},
+
+			"chameleon scales (prereq: nature and stealth proficiency)" : {
+				name : "Chameleon Scales",
+				source : ["TGW", 22],
+				description : "\n   " + "I have advantage on Stealth checks made to hide. Additionally while I'm in a natural environment, such as a forest or cave, I can use my action to become invisible until the start of my next turn.",
+			},
+
+			"cold immunity (prereq: 9th level and crystal or topaz dragon wyrmling)" : {
+				name : "Cold Immunity",
+				source : ["TGW", 22],
+				description : "\n   " + "I gain immunity to cold damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, crystal') !== -1 || classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, topaz') !== -1; },
+			},
+
+			"constrictor (prereq: 5th level and powerful tail)" : {
+				name : "Constrictor",
+				source : ["TGW", 22],
+				description : "\n   " + "Whenever I hit a creature with a tail attack, I can choose to automatically grapple the target instead of knocking it prone. I can only grapple one creature with my tail at a time.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'poweful tail'; },
+			},
+
+			"crystal psionics (prereq: young advancement and crystal dragon wyrmling)" : {
+				name : "Crystal Psionics",
+				source : ["TGW", 22],
+				description : "\n   " + "I can cast the hypnotic pattern and lesser restoration spells without the need for material components once per day each with this trait. I can also cast either of those spells using any spell slots I have of the appropriate level. Charisma is my spellcasting ability for these spells when I cast them with this trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, crystal') !== -1; },
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "Crystal Psionics",
+
+					spells : ["hypnotic pattern", "lesser restoration"],
+
+					selection : ["hypnotic pattern", "lesser restoration"],
+
+					times : 2,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"deadly spines (prereq: 3rd level)" : {
+				name : "Deadly Spines",
+				source : ["TGW", 22],
+				description : "\n   " + "Creatures have disadvantage on checks made to grapple me. Additionally, when a creature misses me with a melee weapon attack, I can use my reaction to spear them with my spines, dealing piercing damage to the creature equal to my proficiency bonus.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3; },
+			},
+
+			"debilitating pitch (prereq: adult advancement and sapphire dragon wyrmling)" : {
+				name : "Debilitating Pitch",
+				source : ["TGW", 22],
+				description : "\n   " + "A creature that fails the save against my breath weapon is incapacitated until the end of its next turn.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, sapphire') !== -1; },
+			},
+
+			"debris storm (prereq: 10th level)" : {
+				name : "Debris Storm",
+				source : ["TGW", 22],
+				description : "\n   " + "As a reaction when I'm the target of a ranged attack, I can roll 1d6 and add it to my AC against the triggering attack. I can use this feature a number of times equal to my proficiency bonus and regain all uses when I finish a long rest.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 10; },
+				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+				recovery : "long rest",
+				action : ["reaction"],
+			},
+
+			"desiccating gas (prereq: adult advancement and topaz dragon wyrmling)" : {
+				name : "Desiccating Gas",
+				source : ["TGW", 22],
+				description : "\n   " + "A creature that fails the save against my breath weapon has has disadvantage on Strength-based ability checks and Strength saving throws, and the creature's weapon attacks that rely on Strength deal half damage until the end of its next turn.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && CurrentRace.known.indexOf('dragon wyrmling, topaz') !== -1; },
+			},
+
+			"disorienting dissonance (prereq: adult advancement and emerald dragon wyrmling)" : {
+				name : "Disorienting Dissonance",
+				source : ["TGW", 23],
+				description : "\n   " + "A creaturethat fails the save against my breath weapon subtracts 1d6 from any attack roll or ability check it makes before the start of my next turn.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && CurrentRace.known.indexOf('dragon wyrmling, emerald') !== -1; },
+			},
+
+			"draconic knowledge" : {
+				name : "Draconic Knowledge",
+				source : ["TGW", 23],
+				description : "\n   " + "I gain proficiency in the Arcana and History skills. My proficiency bonus is doubled for any ability check I make that uses either of those skills.",
+				skills : ["Arcana", "History"],
+			},
+
+			"dragon engine (prereq: young advancement)" : {
+				name : "Dragon Engine",
+				source : ["TGW", 23],
+				description : "\n   " + "I deal double damage to structures.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"dragon's aid" : {
+				name : "Dragon's Aid",
+				source : ["TGW", 23],
+				description : "\n   " + "I can use the Help action as a bonus action.",
+			},
+
+			"dragon's immutability (prereq: shape changer)" : {
+				name : "Dragon's Immutability",
+				source : ["TGW", 23],
+				description : "\n   " + "I'm immune to any spell or effect that would alter my form against my will.",
+				prereqeval : function(v) { return GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'shape changer'; },
+			},
+
+			"dragon's vitaltiy (prereq: adult advancement and increased vitality)" : {
+				name : "Dragon's Vitality",
+				source : ["TGW", 23],
+				description : "\n   " + "My hit dice increases to d12. My HP maximum increases by 1 per level in this class when I take this trait. This trait replaces the \"Increased Vitality\" trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'increased vitality (prereq: young advancement)'; },
+			},
+
+			"early warning system" : {
+				name : "Early Warning System",
+				source : ["TGW", 23],
+				description : "\n   " + "I can cast the alarm spell with this trait. I can't cast that spell with it again until I finish a long rest. I can also cast the spell using any spell slots I have.",
+				spellcastingBonus : {
+
+					name : "Early Warning System",
+
+					spells : ["alarm"],
+
+					selection : ["alarm"],
+
+					times : 1,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"eldersong spellcasting (prereq: song dragon ancestry)" : {
+				name : "Eldersong Spellcasting",
+				source : ["TGW", 23],
+				description : "\n   " + "When I learn a new bard cantrip or a bard spell of 1st level or higher, I can choose the new spell from the cleric spell list instead. I must otherwise obey all the restrictions for selecting the spell, and it becomes a bard spell for me.",
+				prereqeval : function(v) { return (/song dragon/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"elemental carvings (prereq: 9th level and hidecarved ancestry)" : {
+				name : "Elemental Carvings",
+				source : ["TGW", 23],
+				description : "\n   " + "I gain the Elemental Etchings boon. When I activate this boon, I choose an element from among acid, cold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder. I have resistance to the chosen element.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && (/hidecarved/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"elemental fangs (prereq: young advancement)" : {
+				name : "Elemental Fangs",
+				source : ["TGW", 23],
+				description : "\n   " + "Whenever I deal damage with my bite attack, I deal additional damage to the target. This damage is the same type as my breath weapon and is equal to my proficiency bonus.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"emerald psionics (prereq: young advancement and emerald dragon wyrmling)" : {
+				name : "Emerald Psionics",
+				source : ["TGW", 23],
+				description : "\n   " + "I can cast the invisibility and silent image spells without the need for material components once per day each with this trait. I can also cast either of those spells using any spell slots I have of the appropriate level. Charisma is my spellcasting ability for these spells when I cast them with this trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, emerald') !== -1; },
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "Emerald Psionics",
+
+					spells : ["invisibility", "silent image"],
+
+					selection : ["invisibility", "silent image"],
+
+					times : 2,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"empowered breath (prereq: 4th level)" : {
+				name : "Empowered Breath",
+				source : ["TGW", 23],
+				description : "\n   " + "I increase the damage dice of my breath weapon by 2.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 4; },
+			},
+
+			"empowered shadows (prereq: 7th level and shadow dragon ancestry)" : {
+				name : "Empowered Shadows",
+				source : ["TGW", 23],
+				description : "\n   " + "My corpse shadows gain a bonus to attack and damage rolls equal to my proficiency bonus. Additionally, whenever I create a corpse shadow, it gains a number of temporary HP equal to my great wyrm class level.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && (/shadow dragon/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"enhanced senses" : {
+				name : "Enhanced Senses",
+				source : ["TGW", 23],
+				description : "\n   " + "I gain blindsight out to a range equal to 5 x my proficiency bonus.",
+			},
+
+			"eternal vigor (prereq: 4th level)" : {
+				name : "Eternal Vigor",
+				source : ["TGW", 23],
+				description : "\n   " + "I don't need to sleep, and magic can't put me to sleep. Additionally, I can finish a long rest in 4 hours provided I only engage in light activity.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 4; },
+			},
+
+			"expanded casing (prereq: 3rd level and dracolich ancestry)" : {
+				name : "Expanded Casing",
+				source : ["TGW", 23],
+				description : "\n   " + "My phylactery can now hold twice as many souls within it.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3 && (/dracolich/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"eyes of the shadestalker (prereq: shadow dragon ancestry)" : {
+				name : "Eyes of the Shadestalker",
+				source : ["TGW", 23],
+				description : "\n   " + "I can see in magical darkness as if it were dim light.",
+				prereqeval : function(v) { return (/shadow dragon/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"eyes on the prize (prereq: 5th level)" : {
+				name : "Eyes on the Prize",
+				source : ["TGW", 23],
+				description : "\n   " + "I gain proficiency in Investigation and Perception. My proficiency bonus is doubled for any ability check I make that uses either of those skills.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5; },
+				skills : ["Investigation", "Perception"],
+			},
+
+			"fear expansion (prereq: adult advancement and frightful presence)" : {
+				name : "Fear Expansion",
+				source : ["TGW", 23],
+				description : "\n   " + "The range of my \"Frightful Presence\" is now 60 feet.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'frightful presence (prereq: young advancement)'; },
+			},
+
+			"fire extinguisher (prereq: cold breath)" : {
+				name : "Fire Extinguisher",
+				source : ["TGW", 23],
+				description : "\n   " + "Any flames, magical or otherwise, in the area of my breath weapon are instantly doused.",
+				prereqeval : function(v) { return CurrentRace.known.indexOf('dragon wyrmling, lunar') !== -1 || CurrentRace.known.indexOf('dragon wyrmling, silver') !== -1 || CurrentRace.known.indexOf('dragon wyrmling, white') !== -1; },
+			},
+
+			"fire immunity (prereq: 9th level and emerald dragon wyrmling)" : {
+				name : "Fire Immunity",
+				source : ["TGW", 24],
+				description : "\n   " + "I gain immunity to fire damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, emerald') !== -1; },
+			},
+
+			"flexible maw (prereq: 4th level)" : {
+				name : "Flexible Maw",
+				source : ["TGW", 24],
+				description : "\n   " + "When I use my breath weapon, I choose whether it is a 30-foot line or a 15-foot cone.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 4; },
+			},
+
+			"flyby (prereq: 7th level)" : {
+				name : "Flyby",
+				source : ["TGW", 24],
+				description : "\n   " + "I do not provoke opportunity attacks for flying out of an enemy's reach.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"forest ruler (prereq: 3rd level and green dragon wyrmling)" : {
+				name : "Forest Ruler",
+				source : ["TGW", 24],
+				description : "\n   " + "I ignore difficult terrain when in a forest or jungle environment and have advantage on saving throws against spells that create or manipulate plants, such as entangle or grasping vine.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3 && CurrentRace.known.indexOf('dragon wyrmling, green') !== -1; },
+			},
+
+			"frightful fury (prereq: bloodscale ancestry and frightful presence)" : {
+				name : "Frightful Fury",
+				source : ["TGW", 24],
+				description : "\n   " + "When I enter my blood fury, I can use my \"Frightful Presence\" as part of the same bonus action.",
+				prereqeval : function(v) { return (/bloodscale/i).test(classes.known['great wyrm'].subclass) && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'frightful presence (prereq: young advancement)'; },
+			},
+
+			"frightful presence (prereq: young advancement)" : {
+				name : "Frightful Presence",
+				source : ["TGW", 24],
+				description : "\n   " + "As an action, each creature that is within 30 feet of me that can see me must make a Wisdom saving throw against my save DC or be frightened of me for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to this feature for the next 24 hours.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+				action : ["action"],
+			},
+
+			"frozen in fear (prereq: 13th level and frightful presence)" : {
+				name : "Frozen in Fear",
+				source : ["TGW", 24],
+				description : "\n   " + "Creatures who fail the saving throw against my \"Frightful Presence\" have their speed reduced to 0 while frightened of me.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'frightful presence (prereq: young advancement)'; },
+			},
+
+			"hidecarved resistance (prereq: 7th level and hidecarved ancestry)" : {
+				name : "Hidecarved Resistance",
+				source : ["TGW", 24],
+				description : "\n   " + "I gain the Hidecarved Resistance boon. When I activate this boon, I have resistance to bludgeoning, piercing, and slashing damage from non-magical attacks.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && (/hidecarved/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"hivemind dragon (prereq: solhalysis dragon wyrmling)" : {
+				name : "Hivemind Dragon",
+				source : ["TGW", 24],
+				description : "\n   " + "I have telepathy out to a range of 60 feet. Additionally, I can create a telepathic psychic network with a number of other creatures equal to my proficiency bonus, While within range of my telepathy, each of the connected creatures can speak with each other telepathically.",
+				prereqeval : function(v) { return CurrentRace.known.indexOf('dragon wyrmling, solhalysis') !== -1; },
+			},
+
+			"honed craft" : {
+				name : "Honed Craft",
+				source : ["TGW", 24],
+				description : "\n   " + "I choose a skill I'm proficient in. My proficiency bonus is doubled for any ability check I make that uses the chosen skill.",
+			},
+
+			"hunger of the void (prereq: voidmaw ancestry)" : {
+				name : "Hunger of the Void",
+				source : ["TGW", 24],
+				description : "\n   " + "When I deal damage with my breath weapon or any of my Voidmaw Ancestry features to a creature for the first time on my turn, I gain temporary HP equal to half my dragon level. If multiple creatures take damage from the same source, I choose which creature I gain the temporary HP from.",
+				prereqeval : function(v) { return (/voidmaw/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"impenetrable armored scales (prereq: ancient advancement and reinforced armored scales)" : {
+				name : "Impenetrable Armored Scales",
+				source : ["TGW", 24],
+				description : "\n   " + "My AC is now equal to 14 + my Dexterity Modifier + my Constitution modifier. This trait replaces the \"Reinforced Armored Scales\" trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 18 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'reinforced armored scales (prereq: adult advancement)'; },
+			},
+
+			"impotable (prereq: 5th level and black dragon wyrmling)" : {
+				name : "Impotable",
+				source : ["TGW", 24],
+				description : "\n   " + "While I'm at least half-submerged in a body ofwater with little current such as a lake or a well, I can toxify it. For every 1 minute I remain in the water, it ceases to be drinkable for 1 week. After 10 minutes, the toxicity in the water makes it unable to support life for the duration and kills fish and other aquatic life in the area. After an hour, the effects become permanent. A creature that drinks the impotable water makes a Constitution saving throw against my save DC. On a failed save, the creature is poisoned for 24 hours.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5 && CurrentRace.known.indexOf('dragon wyrmling, black') !== -1; },
+			},
+
+			"increased vitality (prereq: young advancement)" : {
+				name : "Increased Vitality",
+				source : ["TGW", 24],
+				description : "\n   " + "My hit dice increases to a d10. My HP maximum increases by 1 per level in this class when I take this trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"iron grip (prereq: 7th level)" : {
+				name : "Iron Grip",
+				source : ["TGW", 24],
+				description : "\n   " + "Whenever I hit a creature with an opportunity attack using one of my natural weapons, that creature's speed is reduced to 0 until the end of the turn.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"keratinous growth (prereq: young advancement)" : {
+				name : "Keratinous Growth",
+				source : ["TGW", 24],
+				description : "\n   " + "The damage dice of my natural weapons increase to 1d8.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"legendary resistance (prereq: adult advancement)" : {
+				name : "Legendary Resistance",
+				source : ["TGW", 24],
+				description : "\n   " + "When I fail a saving throw, I can choose to succeed instead. Once I have used this feature, I can't do so again until I finish a long rest.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13; },
+				usages : 1,
+				recovery : "long rest",
+			},
+
+			"lightning immunity (prereq: 9th level and sapphire dragon wyrmling)" : {
+				name : "Lightning Immunity",
+				source : ["TGW", 24],
+				description : "\n   " + "I gain immunity to lightning damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, sapphire') !== -1; },
+			},
+
+			"lost crescendo (prereq: 15th level and song dragon ancestry)" : {
+				name : "Lost Crescendo",
+				source : ["TGW", 25],
+				description : "\n   " + "I choose one of the following spells: plane shift, reverse gravity, teleport, or true seeing. I can cast the chosen spell once per day and regain the use of it in 1d4 + 1 days. Whenever I gain a new draconic trait, I can change what spell I know with this trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 15 && (/song dragon/i).test(classes.known['great wyrm'].subclass); },
+				spellcastingBonus : {
+
+					name : "Lost Crescendo",
+
+					spells : ["plane shift", "reverse gravity", "teleport", "true seeing"],
+
+					times : 1,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"lunar phases (prereq: 9th level and lunar dragon wyrmling)" : {
+				name : "Lunar Phases",
+				source : ["TGW", 25],
+				description : "\n   " + "As a bonus action for 1 minute or until I lose concentration (as if concentrating on a spell), I have resistance to bludgeoning, piercing, and slashing damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, lunar') !== -1; },
+				action : ["bonus action"],
+			},
+
+			"magma diver (prereq: red dragon wyrmling)" : {
+				name : "Magma Diver",
+				source : ["TGW", 25],
+				description : "\n   " + "While I'm submerged in lava or magma, I have a swim speed equal to my walking speed.",
+				prereqeval : function(v) { return CurrentRace.known.indexOf('dragon wyrmling, red') !== -1; },
+			},
+
+			"moonsilver strikes (prereq: lunar dragon wyrmling)" : {
+				name : "Moonsilver Strikes",
+				source : ["TGW", 25],
+				description : "\n   " + "My natural weapon attacks are treated as silvered for the purposes of overcoming resistances and immunities.",
+				prereqeval : function(v) { return CurrentRace.known.indexOf('dragon wyrmling, lunar') !== -1; },
+			},
+
+			"natural magic" : {
+				name : "Natural Magic",
+				source : ["TGW", 25],
+				description : "\n   " + "I learn a cantrip of my choice from any spell list. This cantrip must either have an attack roll or saving throw and must deal the same kind of damage as my breath weapon. Charisma is my spellcasting stat for the cantrip.",
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "Natural Magic",
+
+					class : ["artificer", "bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"],
+
+					level : 0,
+
+					times : 1,
+
+					prepared : true,
+
+					atwill : true,
+				},
+			},
+
+			"nightmare fuel (prereq: 3rd level and deep dragon wyrmling)" : {
+				name : "Nightmare Fuel",
+				source : ["TGW", 25],
+				description : "\n   " + "I can cast the cause fear spell once per day with this trait, using Charisma as my spellcasting ability. I can also cast the spell using any spell slots I have.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3 && CurrentRace.known.indexOf('dragon wyrmling, deep') !== -1; },
+				spellcastingBonus : {
+
+					name : "Nightmare Fuel",
+
+					spells : ["cause fear"],
+
+					selection : ["cause fear"],
+
+					times : 1,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"old blood scalation" : {
+				name : "Old Blood Scalation",
+				source : ["TGW", 25],
+				description : "\n   " + "I can choose to use Charisma instead of either Dexterity or Constitution for calculating my AC when using my \"Dragon Scales\" feature.",
+			},
+
+			"organic weaponry (prereq: ancient advancement and sharp as steel)" : {
+				name : "Organic Weaponry",
+				source : ["TGW", 25],
+				description : "\n   " + "The damage dice of my natural weapons increases to 1d12. This trait replaces the \"Sharp as Steel\" trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 18 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'sharp as steel (prereq: adult advancement and keratinous growth)'; },
+			},
+
+			"paralyzing breath (prereq: young advancement and silver dragon wyrmling)" : {
+				name : "Paralyzing Breath",
+				source : ["TGW", 25],
+				description : "\n   " + "I can use a charge of my breath weapon to exhale paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a Constitution saving throw against my save DC or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect early on a success.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, silver') !== -1; },
+			},
+
+			"poison immunity (prereq: 9th level and deep dragon wyrmling)" : {
+				name : "Poison Immunity",
+				source : ["TGW", 25],
+				description : "\n   " + "I gain immunity to poison damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, deep') !== -1; },
+			},
+
+			"powerful tail" : {
+				name : "Powerful Tail",
+				source : ["TGW", 25],
+				description : "\n   " + "My tail becomes a natural weapon that counts as an unarmed strike for me. It has a reach of 10 feet and uses my choice of Strength or Dexterity for its ability modifier. On a hit, it deals 1d6 + the chosen modifier bludgeoning damage. A creature hit by my tail must make a Strength saving throw against my save DC. On a failed save, it is knocked prone.",
+				weaponsAdd : ["Tail"],
+				weaponOptions : {
+					baseWeapon : "unarmed strike",
+					regExpSearch : /tail/i,
+					name : "Tail",
+					source : ["TGW", 25],
+					damage : [1, 6, "bludgeoning"]
+				},
+			},
+
+			"psychic immunity (prereq: 9th level and amethyst dragon wyrmling)" : {
+				name : "Psychic Immunity",
+				source : ["TGW", 25],
+				description : "\n   " + "I gain immunity to psychic damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, amethyst') !== -1; },
+			},
+
+			"quick claws (prereq: 3rd level)" : {
+				name : "Quick Claws",
+				source : ["TGW", 25],
+				description : "\n   " + "Whenever I take the Attack action and make at least one attack with my claws, I can use my bonus action to make one additional claw attack.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3; },
+			},
+
+			"reflexes of the ancients" : {
+				name : "Reflexes of the Ancients",
+				source : ["TGW", 25],
+				description : "\n   " + "I add either my Intelligence, Wisdom, or Charisma modifier to my initiative rolls.",
+			},
+
+			"reinforced armored scales (prereq: adult advancement)" : {
+				name : "Reinforced Armored Scales",
+				source : ["TGW", 25],
+				description : "\n   " + "My AC is now equal to 12 + my Dexterity Modifier + my Constitution modifier.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13; },
+			},
+
+			"relentless exhalation (prereq: 10th level)" : {
+				name : "Relentless Exhalation",
+				source : ["TGW", 25],
+				description : "\n   " + "My breath weapon ignores resistances.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 10; },
+			},
+
+			"repulsion breath (prereq: young advancement and bronze dragon wyrmling)" : {
+				name : "Repulsion Breath",
+				source : ["TGW", 25],
+				description : "\n   " + "I can use a charge of my breath weapon to exhale repulsion energy in a 30-foot cone. Each creature in that area must succeed on a Strength saving throw against my save DC. On a failed save, the creature is pushed 40 feet away from me.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, bronze') !== -1; },
+			},
+
+			"sandstorm (prereq: 3rd level and blue dragon wyrmling)" : {
+				name : "Sandstorm",
+				source : ["TGW", 25],
+				description : "\n   " + "I can cast the gust of wind spell without the need for material components and without expending a spell slot. When I cast the spell using this trait, a creature that ends its turn in the area must make a Constitution saving throw against my save DC or be blinded until the end of its next turn. I can't cast that spell with this trait again until I finish a long rest. I can also cast the spell using any spell slots I have.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3 && CurrentRace.known.indexOf('dragon wyrmling, blue') !== -1; },
+				spellcastingBonus : {
+
+					name : "Sandstorm",
+
+					spells : ["gust of wind"],
+
+					selection : ["gust of wind"],
+
+					times : 1,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"sapphire psionics (prereq: young advancement and sapphire dragon wyrmling)" : {
+				name : "Sapphire Psionics",
+				source : ["TGW", 26],
+				description : "\n   " + "I can cast the dissonant whispers and hold person spells without the need for material components once per day each with this trait. I can also cast either of those spells using any spell slots I have of the appropriate level. Charisma is my spellcasting ability for these spells when I cast them with this trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, sapphire') !== -1; },
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "Sapphire Psionics",
+
+					spells : ["dissonant whispers", "hold person"],
+
+					selection : ["dissonant whispers", "hold person"],
+
+					times : 2,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"scintillating radiance (prereq: adult advancment and crystal dragon wyrmling)" : {
+				name : "Scintillating Radiance",
+				source : ["TGW", 26],
+				description : "\n   " + "After using my breath weapon, I gain temporary HP equal to my Dragon level.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && CurrentRace.known.indexOf('dragon wyrmling, crystal') !== -1; },
+			},
+
+			"shadow puppeteer (prereq: 10th level and shadow dragon ancestry)" : {
+				name : "Shadow Puppeteer",
+				source : ["TGW", 26],
+				description : "\n   " + "I can now create and control a number of corpse shadows equal to my proficiency bonus.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 10 && (/shadow dragon/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"shape changer" : {
+				name : "Shape Changer",
+				source : ["TGW", 26],
+				description : "\n   " + "As an action I can polymorph into a Medium or Small humanoid creature, or back into my draconic form. I retain my game statistics and I lose any abilities that rely on parts of my body that I don't have in my humanoid form. Any equipment I'm wearing when I transform is absorbed into my being and are inert and inactive while in the opposite form.",
+			},
+
+			"sharp as steel (prereq: adult advancement and keratinous growth)" : {
+				name : "Sharp as Steel",
+				source : ["TGW", 26],
+				description : "\n   " + "The damage dice of my natural weapons increases to 1d10. This trait replaces the \"Keratinous Growth\" trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'keratinous growth (prereq: young advancement)'; },
+			},
+
+			"singularity's pull (prereq: adult advancement and amethyst dragon wyrmling)" : {
+				name : "Singularity's Pull",
+				source : ["TGW", 26],
+				description : "\n   " + "A creature that fails the save against my breath weapon has its speed reduced to 0 until the start of my next turn.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && CurrentRace.known.indexOf('dragon wyrmling, amethyst') !== -1; },
+			},
+
+			"size matters (prereq: young advancement)" : {
+				name : "Size Matters",
+				source : ["TGW", 26],
+				description : "\n   " + "Once per turn, I can gain advantage on an attack roll I make against a creature that is smaller than me. Additionally, I cannot be non-magically shoved or grappled by creatures smaller than me.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+
+			"sleep breath (prereq: young advancement and brass or moonstone dragon wyrmling)" : {
+				name : "Sleep Breath",
+				source : ["TGW", 26],
+				description : "\n   " + "I can use a charge of my breath weapon to exhale sleep gas in a 30-foot cone. Each creature in that area must succeed on a Constitution saving throw against my save DC or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, moonstone') !== -1 || classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, brass') !== -1; },
+			},
+
+			"slowing breath (prereq: young advancement and copper dragon ancestry)" : {
+				name : "Slowing Breath",
+				source : ["TGW", 26],
+				description : "\n   " + "I can use a charge of my breath weapon to exhale gas in a 30-foot cone. Each creature in that area must succeed on a Constitution saving throw against my save DC. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, copper') !== -1; },
+			},
+
+			"spell repellent (prereq: 13th level and bloodscale ancestry)" : {
+				name : "Spell Repellent",
+				source : ["TGW", 26],
+				description : "\n   " + "While in a blood fury, I have advantage on saving throws against spells and other magical effects.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13 && (/bloodscale/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"spellsong reflexes (prereq: 3rd level and song dragon ancestry)" : {
+				name : "Spellsong Reflexes",
+				source : ["TGW", 26],
+				description : "\n   " + "Whenever me or an ally within 30 feet of me roll for initiative, I can use my reaction to expend a spell slot of 1st-level or higher. When I do, I or an ally within range gain a bonus to the roll equal to the spell slot expended.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3 && (/song dragon/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"spontaneous revival (prereq: 5th level and dracolich ancestry)" : {
+				name : "Spontaneous Revival",
+				source : ["TGW", 26],
+				description : "\n   " + "When damage reduces me to 0 HP, I can make a Charisma saving throw (DC equal to my proficiency bonus + the damage taken). On a success, I instead drop to 1 HP. I can choose to consume souls when I succeed on the save, gaining a number of HP equal to the number of souls consumed. After the saving throw succeeds, I can't use this trait again until I finish a long rest.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5 && (/dracolich/i).test(classes.known['great wyrm'].subclass); },
+				usages : 1,
+				recovery : "long rest",
+			},
+
+			"starstorm (15th level and solar dragon wyrmling)" : {
+				name : "Starstorm",
+				source : ["TGW", 26],
+				description : "\n   " + "When I expend a use of my breath weapon, I can use my bonus action to expend another use. I can also use my reaction to expend another use in the same turn. Once I have used this trait, I can't do so again until I finish a long rest.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 15 && CurrentRace.known.indexOf('dragon wyrmling, solar') !== -1; },
+				usages : 1,
+				recovery : "long rest",
+			},
+
+			"sticky pads (prereq: any natural climbing speed)" : {
+				name : "Sticky Pads",
+				source : ["TGW", 26],
+				description : "\n   " + "I can move up, down, and across vertical surfaces and upside down along ceilings, while leaving my hands free.",
+			},
+
+			"sun spots (prereq: 9th level and solar dragon wyrmling)" : {
+				name : "Sun Spots",
+				source : ["TGW", 26],
+				description : "\n   " + "The area from my \"Photonic Breath\" remains for a number of rounds equal to half my proficiency bonus. A creature that enters the area for the first time or starts its turn there makes a saving throw against my \"Photonic Breath\". On a failed save it takes half the damage it would normally deal, a successful save halves that damage.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, solar') !== -1; },
+			},
+
+			"swift reflexes" : {
+				name : "Swift Reflexes",
+				source : ["TGW", 27],
+				description : "\n   " + "I can take the Dodge action as a bonus action.",
+			},
+
+			"tail sweep (prereq: 5th level and powerful tail)" : {
+				name : "Tail Sweep",
+				source : ["TGW", 27],
+				description : "\n   " + "I spin in place, swinging my tail at every enemy at once. I make a single attack with my tail against each creature within its reach. A creature that is hit by the attack takes half the damage dealt, is pushed back 5 feet, and automatically fails the saving throw against being knocked prone. I can do this a number of times equal to my proficiency bonus and regain all uses when I finish a long rest.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5 && GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'poweful tail'; },
+				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+				recovery : "long rest",
+				action : ["action", " (as an attack)"],
+			},
+
+			"the shadowfell approaches (prereq: 3rd level and shadow dragon ancestry)" : {
+				name : "The Shadowfell Approaches",
+				source : ["TGW", 27],
+				description : "\n   " + "I can cast the darkness spell once per day with this trait using Charisma as my spellcasting ability. I can also cast the spell using any spell slots I have.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3 && (/shadow dragon/i).test(classes.known['great wyrm'].subclass); },
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "The Shadowfell Approaches",
+
+					spells : ["darkness"],
+
+					selection : ["darkness"],
+
+					times : 1,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"topaz psionics (prereq: young advancement and topaz dragon wyrmling)" : {
+				name : "Topaz Psionics",
+				source : ["TGW", 27],
+				description : "\n   " + "I can cast the bane and create or destroy water spells without the need for material components once per day each with this trait. I can also cast either of those spells using any spell slots I have of the appropriate level. Charisma is my spellcasting ability for these spells when I cast them with this trait.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, topaz') !== -1; },
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "Topaz Psionics",
+
+					spells : ["bane", "create or destroy water"],
+
+					selection : ["bane", "create or destroy water"],
+
+					times : 2,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"twinned resonance (prereq: 7th level and song dragon ancestry)"  : {
+				name : "Twinned Resonance",
+				source : ["TGW", 27],
+				description : "\n   " + "Whenever I cast a spell that targets only me or an ally within 15 feet of me, I can have the spell also target another ally within 15 feet of the first target.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && (/song dragon/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"undead viscount (prereq: 9th level and dracolich ancestry)"  : {
+				name : "Undead Viscount",
+				source : ["TGW", 27],
+				description : "\n   " + "I learn the animate dead spell and can cast it a number of times per day equal to my Charisma modifier. When I cast the spell using this trait, instead of requiring a corpse, it consumes a soul from my phylactery to make a skeleton or zombie. When the undead created by the spell would normally be released from my control, they die and disintegrate into dust.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && (/dracolich/i).test(classes.known['great wyrm'].subclass); },
+				spellcastingBonus : {
+
+					name : "Undead Viscount",
+
+					spells : ["animate dead"],
+
+					selection : ["animate dead"],
+
+					times : 1,
+
+					prepared : true,
+				},
+			},
+
+			"unknowable etchings (prereq: 5th level and hidecarved ancestry)" : {
+				name : "Unknowable Etchings",
+				source : ["TGW", 27],
+				description : "\n   " + "I gain the Unknowable Etching boon. When I activate this boon, I cast the nondetection spell on myself without the need for material components.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5 && (/hidecarved/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"unifying orator (prereq: 10th level and song dragon ancestry)" : {
+				name : "Unifying Orator",
+				source : ["TGW", 27],
+				description : "\n   " + "I'm permanently under the effects of the tongues spell.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 10 && (/song dragon/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"unrelenting force (prereq: 5th level and hidecarved ancestry)" : {
+				name : "Unrelenting Force",
+				source : ["TGW", 27],
+				description : "\n   " + "I gain the following boon that I can choose when using my \"Mystical Protection\":\n   Unrelenting Force: When I activate this boon, I cast the haste spell on myself without the need for material components.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 5 && (/hidecarved/i).test(classes.known['great wyrm'].subclass); },
+			},
+
+			"variable appendages" : {
+				name : "Variable Appendages",
+				source : ["TGW", 27],
+				description : "\n   " + "I choose whether to use my Strength or Dexterity modifiers for attack and damage rolls made with my natural weapons.",
+			},
+
+			"venemous fangs" : {
+				name : "Venemous Fangs",
+				source : ["TGW", 27],
+				description : "\n   " + "When I hit a creature with a bite attack, it must make a Constitution saving throw against my save DC. On a failed save the creature is poisoned until the end of my next turn.",
+			},
+
+			"vent heat (prereq: young advancement and solhalysis dragon wyrmling)" : {
+				name : "Vent Heat",
+				source : ["TGW", 27],
+				description : "\n   " + "I can use a charge of my breath weapon to release the heat built up in my body as a destructive force. Each creature within 10 feet of me must make a Dexterity saving throw against my save DC. On a failed save, a creature takes my dragon's breath weapon damage as fire damage, or half as much on a successful save.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, solhalysis') !== -1; },
+			},
+
+			"vibrational senses (prereq: any natural burrow speed)" : {
+				name : "Vibrational Senses",
+				source : ["TGW", 27],
+				description : "\n   " + "I have tremorsense out to a range of 30 feet.",
+				vision : [["Tremorsense", 30]],
+			},
+
+			"vicious assault (prereq: 3rd level)" : {
+				name : "Vicious Assault",
+				source : ["TGW", 27],
+				description : "\n   " + "My natural weapons score a critical hit on a roll of 19 or 20.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 3; },
+			},
+
+			"waking nightmare (prereq: young advancement and deep dragon wyrmling)" : {
+				name : "Waking Nightmare",
+				source : ["TGW", 27],
+				description : "\n   " + "A creature that fails the saving throw against my \"Nightmare Breath\" is frightened of me for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, deep') !== -1; },
+			},
+
+			"wandering wyrm" : {
+				name : "Wandering Wyrm",
+				source : ["TGW", 27],
+				description : "\n   " + "My walking speed increases by 10 feet and I ignore nonmagical difficult terrain.",
+				speed : {
+
+					walk : { spd : "+10", enc : "+10" },
+				},
+			},
+
+			"weakening breath (prereq: young advancement and gold dragon wyrmling)" : {
+				name : "Weakening Breath",
+				source : ["TGW", 27],
+				description : "\n   " + "I can use a charge of my breath weapon to exhale gas in a 30-foot cone. Each creature in that area must succeed on a Strength saving throw against my save DC or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7 && CurrentRace.known.indexOf('dragon wyrmling, gold') !== -1; },
+			},
+
+			"weight training (prereq: bulky build)" : {
+				name : "Weight Training",
+				source : ["TGW", 28],
+				description : "\n   " + "I can wear heavy armor and still use my fly speed.",
+				prereqeval : function(v) { return GetFeatureChoice('class', 'great wyrm', 'draconic evolution') == 'bulky build (prereq: strength 13 or higher)'; },
+			},
+
+			"winding coils (prereq: dexterity 17 or higher)" : {
+				name : "Winding Coils",
+				description : "\n   " + "Moving out of the threat range of a hostile creature does not provoke attacks of opportunity.",
+				prereqeval : function(v) { return What('Dex') >= 17; },
+			},
+
+			"wing attack (13th level)" : {
+				name : "Wing Attack",
+				source : ["TGW", 28],
+				description : "\n   " + "As an action, I begin to flap my wings and each creature within 10 feet of me must succeed on a Dexterity saving throw against my save DC. On a failed save, a creature takes 3d6 bludgeoning damage and is knocked prone. I can then fly up to half my fly speed without provoking opportunity attacks.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 13; },
+				action : ["action"],
+			},
+
+			"wing shield" : {
+				name : "Wing Shield",
+				source : ["TGW", 28],
+				description : "\n   " + "When a friendly creature within 5 feet of me is the target of the attack, I can use my reaction to attempt to shield them with my wing. The creature making the attack has disadvantage on the roll.",
+				action : ["reaction"],
+			},
+
+			"winter wonderland (9th level and white dragon)" : {
+				name : "Winter Wonderland",
+				source : ["TGW", 28],
+				description : "\n   " + "I can cast the sleet storm spell once per day with this trait using Charisma as my spellcasting ability. I can also cast the spell using any spell slots I have.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 9 && CurrentRace.known.indexOf('dragon wyrmling, white') !== -1; },
+				spellcastingAbility : 6,
+				spellcastingBonus : {
+
+					name : "Winter Wonderland",
+
+					spells : ["sleet storm"],
+
+					selection : ["sleet storm"],
+
+					times : 1,
+
+					prepared : true,
+
+					oncelr : true,
+				},
+			},
+
+			"young exhalation upgrade (prereq: young advancement)" : {
+				name : "Young Exhalation Upgrade",
+				source : ["TGW", 28],
+				description : "\n   " + "The damage dice of my breath weapon become d8's.",
+				prereqeval : function(v) { return classes.known['great wyrm'].level >= 7; },
+			},
+		},
+
+		"familial awakening" : {
+			name : "Familial Awakening",
+			source : ["TGW", 9],
+			minlevel : 2,
+			description : "\n   " + "The power of my great dragon family has awakened in me. I gain special benefits based on my draconic subrace and which family it falls into.",
+			choices : ["Chromatic", "Metallic", "Gem", "Wildspace", "Unique Species"],
+			choicesNotInMenu : false,
+			"chromatic" : {
+				name : "Chromatic Awakening",
+				description : "\n   " + "If I'm a Blue, Black, Green, Red, or White wyrmling, I gain the following:\n   Avaricious Nature: By studying an object for one minute, I can determine its approximate value, whether or not it is magical, and whether or not it is cursed.",
+			},
+
+			"metallic" : {
+				name : "Metallic Awakening",
+				description : "\n   " + "If I'm a Brass, Bronze, Copper, Gold, or Silver wyrmling, I gain the following:\n   Assumed Benevolence: When dealing with humanoid creatures, I double my proficiency bonus for any Persuasion made targeting them.",
+			},
+
+			"gem" : {
+				name : "Gem Awakening",
+				description : "\n   " + "If I'm an Amethyst, Crystal, Emerald, Sapphire, or Topaz wyrmling, I gain the following:\n   Draconic Telepathy: I have telepathy out to a range of 60 feet. I don't need to share a language with the creature for it to understand these messages, but it must be able to understand at least one language to comprehend them.",
+			},
+
+			"wildspace" : {
+				name : "Wildspace Awakening",
+				description : "\n   " + "If I'm a Lunar or Solar wyrmling, I gain the following:\n   Unusual Nature: I don't require air.",
+			},
+
+			"unique species" : {
+				name : "Unique Awakening",
+				description : "\n   " + "If I'm a type of wyrmling that doesn't fall into any of the other draconic families, I gain one Draconic Trait of my choosing.",
+				bonusClassExtrachoices : [{
+					'class' : "great wyrm",
+					feature : "draconic evolution",
+					bonus : 1
+				}],
+			},
+		},
+
+		"young advancement" : {
+			name : "Young Advancement",
+			source : ["TGW", 9],
+			minlevel : 7,
+			description : "\n   " + "My body has grown into that of a young dragon. I gain the following:\n   My size increases to Large.\n   My walking speed increases by 5 feet and my fly speed increases by 10 feet.\n   The size of my breath weapon increases to a 60-foot line, or 30-foot cone. A solar dragon's \"Photonic Breath\" has its range increased to 60 feet and the blast area is now a 15-foot sphere.",
+			size : 2,
+			speed : {
+
+				walk : { spd : "+5", enc : "+5" },
+
+				climb : { spd : "+10", enc : 0 },
+			},
+		},
+
+		"adult advancement" : {
+			name : "Adult Advancement",
+			source : ["TGW", 9],
+			minlevel : 13,
+			description : "\n   " + "My growth reaches the next stage of a dragon's life cycle, an adult. I gain the following:\n   My size increases to to Huge.\n   My walking speed increases by 5 feet and my fly speed increases by 10 feet.\n   The size of my breath weapon increases to a 90-foot line, or 60-foot cone. A solar dragon's \"Photonic Breath\" has its range increased to 90 feet and the blast area is now a 20-foot sphere.",
+			size : 1,
+			speed : {
+
+				walk : { spd : "+5", enc : "+5" },
+
+				climb : { spd : "+10", enc : 0 },
+			},
+		},
+
+		"ancient advancement" : {
+			name : "Ancient Advancement",
+			source : ["TGW", 9],
+			minlevel : 18,
+			description : "\n   " + "I become an ancient dragon. I gain the following:\n   My size increases to to Gargantuan.\n   My walking speed increases by 5 feet and my fly speed increases by 10 feet.\n   The size of my breath weapon increases to a 120-foot line, or 90-foot cone. A solar dragon's \"Photonic Breath\" has its range increased to 120 feet and the blast area is now a 25-foot sphere.",
+			size : 0,
+			speed : {
+
+				walk : { spd : "+5", enc : "+5" },
+
+				climb : { spd : "+10", enc : 0 },
+			},
+		},
+
+		"elder wyrm" : {
+			name : "Elder Wyrm",
+			source : ["TGW", 9],
+			minlevel : 20,
+			description : "\n   " + "I choose two ability scores, they increase by 2. My maximum for those scores is now 22.",
+			improvements : "Elder Wyrm: +2 Any Two Scores;",
+		},
+	}
+}
+
+AddSubClass(
+
+	"great wyrm",
+
+	"bloodscale ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*blooscale)(?=.*ancestry).*$/i,
+
+		subname : "Bloodscale Ancestry",
+
+		source : ["TGW", 10],
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Blood Fury",
+				source : ["TGW", 10],
+				minlevel : 1,
+				description : "\n   " + "As a bonus action, I can enter a state of fury similar to a barbarian's rage. While in this state, I gain the following benefits if I'm not wearing armor:\n   I have advantage on Strength checks and Strength saving throws.\n   When I hit with an attack using one of my natural weapons, I gain a bonus to the damage equal to my proficiency bonus.\n   I have resistance to bludgeoning, piercing, and slashing damage.\nIf I'm able to cast spells, I can't cast them or concentrate on them while in a fury. My blood fury lasts for 1 minute. It ends early if I'm knocked unconscious or if my turn ends and I haven't attacked a hostile creature since my last turn or taken damage since then. I can also end my fury on my turn as a bonus action. I can use this feature a number of times equal to my proficiency bonus and regain all uses when I finish a long rest.",
+				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+				recovery : "long rest",
+				action : ["bonus action"],
+			},
+			"subclassfeature1.1" : {
+				name : "Fearful Presence",
+				source : ["TGW", 10],
+				minlevel : 1,
+				description : "\n   " + "I gain proficiency in Intimidation if I don't have it already, and creatures have disadvantage on ability checks made against my Intimidation checks.",
+				skills : ["Intimidation"],
+			},
+			"subclassfeature6" : {
+				name : "Slick Armor",
+				source : ["TGW", 10],
+				minlevel : 6,
+				description : "\n   " + "While in my blood fury, I gain a bonus to my AC equal to half my proficiency bonus (minimum 1).",
+			},
+			"subclassfeature10" : {
+				name : "Unstoppable Fury",
+				source : ["TGW", 10],
+				minlevel : 10,
+				description : "\n   " + "While I'm in my blood fury, I have advantage on all saving throws.",
+			},
+			"subclassfeature14" : {
+				name : "Bloodscale Frenzy",
+				source : ["TGW", 10],
+				minlevel : 14,
+				description : "\n   " + "When I enter my blood fury for the first time in a day, I gain the benefits of the haste spell for the duration of the fury.",
+			},
+		}
+	}
+);
+
+AddSubClass(
+
+	"great wyrm",
+
+	"dracolich ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*dracolich)(?=.*ancestry).*$/i,
+
+		subname : "Dracolich Ancestry",
+
+		source : ["TGW", 11],
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Gift of Dracolichdom",
+				source : ["TGW", 11],
+				minlevel : 1,
+				description : "\n   " + "As a newly formed Dracolich, I gain the following benefits:\n   My creature type changes to Undead.\n   I'm immune to poison damage and the poisoned condition.\n   I have resistance to necrotic damage.",
+				savetxt : {
+
+					immune : ["poisoned"]
+				},
+				dmgres : ["Necrotic"],
+			},
+			"subclassfeature1.1" : {
+				name : "Phylactery",
+				source : ["TGW", 11],
+				minlevel : 1,
+				description : "\n   " + "My phylactery is a tiny object, such as a gemstone or piece of jewelry. It has an AC of 8 + my Charisma modifier, a number of HP equal to 10 + my Great Wyrm level, and it is immune to poison and psychic damage. When a creature within 30 feet of me drops to 0 HP, I can use my reaction to harvest its soul and put it into the phylactery provided it is on my person. My phylactery can house a number of souls equal to my proficiency bonus. While my own soul is housed inside the phylactery, it does not count towards the number of souls within the phylactery and it cannot be used with features that consume the souls I harvest. I cannot gain souls from creatures that lack them, such as undead and constructs. When I die, my body crumbles into dust and my phylactery builds a new one over a number of days equal to my proficiency bonus + half my Great Wyrm level. I can choose to consume harvested souls within my phylactery during this time, reducing the number of days it takes to rebuild my body equal to the number of souls I consume. My new body reappears within 10 feet of my phylactery at the end of this process. If my phylactery is damaged it can be repaired by the mending spell or by consuming souls within it. For each casting of mending or each soul consumed, my phylactery regains 10 HP. If my phylactery is ever destroyed, or I drop to 0 hit points on a different plane than my phylactery, I immediately die and my soul passes harmlessly into the afterlife.",
+			},
+			"subclassfeature6" : {
+				name : "Powerful Decay",
+				source : ["TGW", 12],
+				minlevel : 6,
+				description : "\n   " + "I'm immune to being charmed, exhausted, frightened, or paralyzed. Additionally, my phylactery adds my proficiency bonus to its AC and its HP maximum is doubled.",
+				savetxt : {
+
+					immune : ["charmed", "exhaustion", "frightened", "paralysis"]
+				},
+			},
+			"subclassfeature10" : {
+				name : "Upgraded Phylactery",
+				source : ["TGW", 12],
+				minlevel : 10,
+				description : "\n   " + "My phylactery is now immune to non-magical bludgeoning, piercing, and slashing damage, and has resistance to all other damage types. Additionally, while my phylactery is on my person, I can use my bonus action to consume an amount of souls up to my Charisma modifier. For each soul consumed this way, I regain a number of HP equal 1d6 + my Charisma modifier.",
+			},
+			"subclassfeature14" : {
+				name : "Force of Undead Nature",
+				source : ["TGW", 12],
+				minlevel : 14,
+				description : "\n   " + "When I'm forced to make a saving throw, I can consume a number of souls up to my Charisma modifier provided my phylactery is on my person. When I do, I gain a bonus to the saving throw equal to the number of souls consumed. Additionally, while my phylactery is on my person, I have advantage on death saving throws.",
+			},
+		}
+	}
+);
+
+AddSubClass(
+
+	"great wyrm",
+
+	"dragon mage ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*dragon)(?=.*mage)(?=.*ancestry).*$/i,
+
+		subname : "Dragon Mage Ancestry",
+
+		source : ["TGW", 13],
+
+		spellcastingAbility : 6,
+
+		spellcastingFactor : 2,
+
+		spellcastingTable: [
+			[0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+		],
+
+		spellcastingKnown : {
+
+			cantrips : [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4],
+
+			spells : [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 11, 11, 12],
+
+			prepared : true,
+
+		},
+
+		spellcastingList : {
+
+			class : "sorcerer",
+
+			level : [0, 5],
+		},
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Spell Points",
+				source : ["TGW", 13],
+				minlevel : 1,
+				description : "\n   " + "A dragon mage's magic comes from within their being, and as such, they pull from a pool of magical energy represented as spell points. Each spell has a point cost based on its level, represented in the table below. In order to cast a spell, I must deduct the number of points from the total number of spell points I have available. Cantrips do not cost any points. If I have less points than a spell's given point cost, I cannot cast it, and my spell points can't reach below 0.\n   Spell Level   Point Cost\n    1st           2\n   2nd           3\n   3rd           5\n   4th           6\n   5th           7\nI regain all spent spell points when I finish a long rest.",
+				additional : ["4 Spell Points", "4 Spell Points", "6 Spell Points", "6 Spell Points", "14 Spell Points", "14 Spell Points", "17 Spell Points", "17 Spell Points", "27 Spell Points", "27 Spell Points", "32 Spell Points", "32 Spell Points", "38 Spell Points", "38 Spell Points", "44 Spell Points", "44 Spell Points", "57 Spell Points", "57 Spell Points", "64 Spell Points", "64 Spell Points"],
+			},
+			"subclassfeature1.1" : {
+				name : "Spellscale",
+				source : ["TGW", 14],
+				minlevel : 1,
+				description : "\n   " + "Whenever I cast a spell of 1st-level or higher, I can use my reaction to channel the excess energy to harden my scales. When I do, I gain a bonus to my AC equal to half the level of the spell (minimum 1) which lasts until the start of my next turn. If I cast another spell while my AC is increased in this manner, I choose which of the spells grants the bonus.",
+				action : ["reaction"],
+			},
+			"subclassfeature6" : {
+				name : "Spellbound Exhalation",
+				source : ["TGW", 14],
+				minlevel : 6,
+				description : "\n   " + "Whenever I cast a spell of 1st-level or higher that has an area, I can change the range and shape to that of my breath weapon. The area of the original spell must create a cone, cube, cylinder, line, or sphere and cannot have a range of self in order for me to change it to that of my breath weapon. I can use this feature a number of times equal to my proficiency bonus and regain all uses when I finish a long rest.",
+				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+				recovery : "long rest",
+			},
+			"subclassfeature10" : {
+				name : "Mystic Wrath",
+				source : ["TGW", 14],
+				minlevel : 10,
+				description : "\n   " + "I add my Charisma modifier to my save DC.",
+			},
+			"subclassfeature14" : {
+				name : "Helix Arcanum",
+				source : ["TGW", 14],
+				minlevel : 14,
+				description : "\n   " + "I gain a bonus to the attack rolls and spell save DC's of my spells equal to the number of \"Draconic Traits\" I have that have dragon mage as a prerequisite.",
+			},
+		}
+	}
+);
+
+AddSubClass(
+
+	"great wyrm",
+
+	"hellkite ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*hellkite)(?=.*ancestry).*$/i,
+
+		subname : "Hellkite Ancestry",
+
+		source : ["TGW", 15],
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Living Weapon",
+				source : ["TGW", 15],
+				minlevel : 1,
+				description : "\n   " + "I gain two traits of your choice from among \"Adrenaline Rush\", \"Armored Horns\", \"Enhanced Senses\", and \"Powerful Tail\". These traits do not count against the maximum number of \"Draconic Traits\" I know.",
+				bonusClassExtrachoices : [{
+					'class' : "great wyrm",
+					feature : "draconic evolution",
+					bonus : 2
+				}],
+			},
+			"subclassfeature1.1" : {
+				name : "Advantaegous Strikes",
+				source : ["TGW", 15],
+				minlevel : 1,
+				description : "\n   " + "Whenever a creature misses me with a melee weapon attack, I can use my reaction togrant myself advantage on the next attack I make with one of my natural weapons against the creature that missed the attack before the end of my next turn.",
+				action : ["reaction"],
+			},
+			"subclassfeature6" : {
+				name : "Wyrm's Hunt",
+				source : ["TGW", 15],
+				minlevel : 6,
+				description : "\n   " + "Whenever I score a critical hit, or drop a creature to 0 HP, I can move up to my walking speed towards another hostile creature.",
+			},
+			"subclassfeature10" : {
+				name : "Visage of Terror",
+				source : ["TGW", 15],
+				minlevel : 10,
+				description : "\n   " + "I gain the \"Frightful Presence\" draconic trait. It does not count against the number of traits I know. If I already have \"Frightful Presence\", I can instead choose a draconic trait that affects one of my natural weapons, my \"Frightful Presence\", or my breath weapon. This trait does not count against the number of traits I know.",
+				bonusClassExtrachoices : [{
+					'class' : "great wyrm",
+					feature : "draconic evolution",
+					bonus : 1
+				}],
+			},
+			"subclassfeature14" : {
+				name : "Hellkite's Fury",
+				source : ["TGW", 15],
+				minlevel : 14,
+				description : "\n   " + "Whenever I hit a creature with an attack using one of my natural weapons, if I had advantage on the attack, I can deal bonus damage to the creature equal to the number of draconic traits I have. Once I have used this feature, I can't do so again until I finish a short or long rest.",
+				usages : 1,
+				recovery : "short rest",
+			},
+		}
+	}
+);
+
+AddSubClass(
+
+	"great wyrm",
+
+	"hidecarved ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*hidecarved)(?=.*ancestry).*$/i,
+
+		subname : "Hidecarved Ancestry",
+
+		source : ["TGW", 16],
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Mystical Protection",
+				source : ["TGW", 16],
+				minlevel : 1,
+				description : "\n   " + "As an action, I can activate one of these boons:\n   Mystical Armoring: My AC increases by 2.\n   Spell Resistance: I have advantage on saving throws against spells and other magical effects.\n   Timeless Health: I'm immune to poison damage, the poisoned condition, and all diseases.\nMy boon lasts for 1 minute unless the boon grants me a spell with a specific duration. I can activate a number of boons equal to my proficiency bonus, and regain all uses when I finish a long rest. If I activate a boon while one is already active, the effects of the first boon end.",
+				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+				recovery : "long rest",
+				action : ["action"],
+			},
+			"subclassfeature1.1" : {
+				name : "Suppress Weakness",
+				source : ["TGW", 16],
+				minlevel : 1,
+				description : "\n   " + "I can use my reaction to being hit with a critical hit, turning it into a normal hit. Once I have used this feature, I can't do so again until I finish a short rest or long rest.",
+				usages : 1,
+				recovery : "short rest",
+				action : ["reaction"],
+			},
+			"subclassfeature6" : {
+				name : "Empowered Protection",
+				source : ["TGW", 16],
+				minlevel : 6,
+				description : "\n   " + "I can activate boons as a bonus action.",
+			},
+			"subclassfeature10" : {
+				name : "Advanced Etchings",
+				source : ["TGW", 16],
+				minlevel : 10,
+				description : "\n   " + "I can choose from the following boons when activating \"Mystical Protection\":\n   Shifty Scales: When I activate this boon, I cast the blur spell.\n   Inscrutability: I'm immune to any effect that would sense my emotions or read my thoughts. Insight checks made to ascertain my intentions or sincerity have disadvantage.\n   Undying: When I activate this boon, I cast the death ward spell on myself.",
+			},
+			"subclassfeature14" : {
+				name : "Additional Etchings",
+				source : ["TGW", 16],
+				minlevel : 14,
+				description : "\n   " + "I can activate two boons at once. If the boon I choose casts a spell that requires concentration, I cannot choose another boon that requires concentration.",
+			},
+		}
+	}
+);
+
+AddSubClass(
+
+	"great wyrm",
+
+	"shadow dragon ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*shadow)(?=.*dragon)(?=.*ancestry).*$/i,
+
+		subname : "Shadow Dragon Ancestry",
+
+		source : ["TGW", 17],
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Bathed in Darkness",
+				source : ["TGW", 17],
+				minlevel : 1,
+				description : "\n   " + "I'm suffused with the dark energy of the Shadowfell, granting me several benefits listed below:\n   I gain resistance to necrotic damage if I'm not already.\n   Any elemental damage I deal, such as that of my breath weapon, changes to necrotic.\n   My darkvision increases to 120 feet.\n   I gain the \"Enhanced Senses\" draconic trait if I don't already have it. This trait does not count against the number of traits I know.",
+				vision : [["Darkvision", 120]],
+				dmgres : ["Necrotic"],
+				bonusClassExtrachoices : [{
+					'class' : "great wyrm",
+					feature : "draconic evolution",
+					bonus : 1
+				}],
+			},
+			"subclassfeature1.1" : {
+				name : "Shadow Stealth",
+				source : ["TGW", 17],
+				minlevel : 1,
+				description : "\n   " + "I gain proficiency in the Stealth skill if I don't have it already. My proficiency bonus is doubled for any ability check I make that uses Stealth. Additionally, while in dim light or darkness, I can take the Hide action as a bonus action.",
+				skills : ["Stealth"],
+			},
+			"subclassfeature6" : {
+				name : "Shadow Breath",
+				source : ["TGW", 17],
+				minlevel : 6,
+				description : "\n   " + "Whenever a humanoid creature is reduced to 0 HP by my breath weapon, it immediately dies and I can use my reaction to raise an undead Corpse Shadow from its body under my control. I can create and control a number of Shadows this way equal to half my proficiency bonus rounded down (minimum 1). The shadows share my initiative and takes their turns right after mine. On each of my turns, I can use a bonus action to mentally command any of my shadows as long as they are within 60 feet of me (if I control multiple shadows, I can command any or all of them at the same time, issuing the same command to each one). I decide what action the shadows will take and where they will move during their next turn. If I issue no commands, the shadows only defend themselves against hostile creatures. Once given an order, the Shadows continue to follow it until its task is complete. The shadows are under my control for 1 hour, after which they dissipates into nothingness. I can use this feature a number of times equal to my proficiency bonus,and you regain all uses when I finish a long rest.",
+				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+				recovery : "long rest",
+			},
+			"subclassfeature10" : {
+				name : "Umbral Striker",
+				source : ["TGW", 17],
+				minlevel : 10,
+				description : "\n   " + "While I'm hidden and miss with an attack using one of my natural weapons, the attack doesn't reveal my location.",
+			},
+			"subclassfeature14" : {
+				name : "Living Shadow",
+				source : ["TGW", 17],
+				minlevel : 14,
+				description : "\n   " + "While in dim light or darkness, I have resistance to all damage that isn't force, psychic, or radiant.",
+			},
+		}
+	}
+);
+
+AddSubClass(
+
+	"great wyrm",
+
+	"song dragon ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*song)(?=.*dragon)(?=.*ancestry).*$/i,
+
+		subname : "Song Dragon Ancestry",
+
+		source : ["TGW", 18],
+
+		spellcastingAbility : 6,
+
+		spellcastingFactor : 2,
+
+		spellcastingTable: [
+			[0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 1, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+			[0, 0, 0, 0, 1, 0, 0, 0, 0],
+		],
+
+		spellcastingKnown : {
+
+			cantrips : [2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4],
+
+			spells : [2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 11, 11, 12],
+
+			prepared : true,
+
+		},
+
+		spellcastingList : {
+
+			class : "bard",
+
+			level : [0, 5],
+		},
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Spell Points",
+				source : ["TGW", 18],
+				minlevel : 1,
+				description : "\n   " + "A song dragon's magic comes from within their being, and as such, they pull from a pool of magical energy represented as spell points. Each spell has a point cost based on its level, represented in the table below. In order to cast a spell, I must deduct the number of points from the total number of spell points I have available. Cantrips do not cost any points. If I have less points than a spell's given point cost, I cannot cast it, and my spell points can't reach below 0.\n   Spell Level   Point Cost\n    1st           2\n   2nd           3\n   3rd           5\n   4th           6\n   5th           7\nI regain all spent spell points when I finish a long rest.",
+				additional : ["4 Spell Points", "4 Spell Points", "6 Spell Points", "6 Spell Points", "14 Spell Points", "14 Spell Points", "17 Spell Points", "17 Spell Points", "27 Spell Points", "27 Spell Points", "32 Spell Points", "32 Spell Points", "38 Spell Points", "38 Spell Points", "44 Spell Points", "44 Spell Points", "57 Spell Points", "57 Spell Points", "64 Spell Points", "64 Spell Points"],
+			},
+			"subclassfeature1.1" : {
+				name : "Weredragon",
+				source : ["TGW", 19],
+				minlevel : 1,
+				description : "\n   " + "I gain proficiency in the Performance skill if you don't have italready. You also gain the \"Shape Changer\" trait. This trait does not count against the number of traits I know. When I transform using this trait, I always take the form of a supernaturally beautiful human.",
+				skills : ["Performance"],
+				bonusClassExtrachoices : [{
+					'class' : "great wyrm",
+					feature : "draconic evolution",
+					bonus : 1
+				}],
+			},
+			"subclassfeature6" : {
+				name : "Masque of Melody",
+				source : ["TGW", 19],
+				minlevel : 6,
+				description : "\n   " + "Whenever I cast a spell while in my human form, I can roll a Performance check against my save DC. On a success, creatures affected by the spell are unaware it was me that casted it. This includes spells where the target automatically knows I'm the source, such as friends or charm person. I can use this feature a number of times equal to my proficiency bonus and I regain all uses when I finish a long rest.",
+				usages : [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+				recovery : "long rest",
+			},
+			"subclassfeature10" : {
+				name : "Siren Song",
+				source : ["TGW", 19],
+				minlevel : 10,
+				description : "\n   " + "I gain the \"Dragon's Immutability\" trait if I don't already have it, or a draconic trait of my choice. This trait does not count against the number of traits I know. While in my human form, I'm perceived as truly being human to those with truesight or other abilities that can see the true form of shapeshifted creatures.",
+				bonusClassExtrachoices : [{
+					'class' : "great wyrm",
+					feature : "draconic evolution",
+					bonus : 1
+				}],
+			},
+			"subclassfeature14" : {
+				name : "Draconic Melody",
+				source : ["TGW", 19],
+				minlevel : 14,
+				description : "\n   " + "I can use my \"Masque of Meldoy\" feature even when in my natural draconic form. Additionally, when I make a Performance check, my proficiency bonus is doubled for the roll.",
+			},
+		}
+	}
+);
+
+AddSubClass(
+
+	"great wyrm",
+
+	"voidmaw ancestry",
+
+	{
+
+		regExpSearch : /^(?=.*voidmaw)(?=.*ancestry).*$/i,
+
+		subname : "Voidmaw Ancestry",
+
+		source : ["TGW", 20],
+
+		features : {
+
+			"subclassfeature1" : {
+				name : "Ravenous Waltz",
+				source : ["TGW", 20],
+				minlevel : 1,
+				description : "\n   " + "I can expend a use of my Breath Weapon to change it from an elemental force to a mass of hungering teeth. Each creaturein the area must make a Dexterity saving throw against my save DC. On a failed save a creature takes magical piercing damage equal to my Breath Weapon damage, half as much damage on a successful save.",
+			},
+			"subclassfeature1.1" : {
+				name : "Covetous Nature",
+				source : ["TGW", 20],
+				minlevel : 1,
+				description : "\n   " + "I'm immune to having my HP drained in order to restore the HP of hostile creatures, such as with the vampiric touch spell or a vampire's bite attack.",
+			},
+			"subclassfeature6" : {
+				name : "Hungering Jaws",
+				source : ["TGW", 20],
+				minlevel : 6,
+				description : "\n   " + "As an action, I can have the jaws clamp down on a creature of my choice within 30 feet of me. That creature makes a Strength saving throw against my save DC. On a failed save, the target takes damage equal to my breath weapon damage, half as much on a successful save. A target that fails the save is restrained by the jaws until the end of my next turn. Once I've used this feature, I can't do so again until I finish a short or long rest.",
+				usages : 1,
+				recovery : "short rest",
+				action : ["action"],
+			},
+			"subclassfeature10" : {
+				name : "Ravenous Bloom",
+				source : ["TGW", 20],
+				minlevel : 10,
+				description : "\n   " + "When I use my \"Ravenous Waltz\" feature, the teeth it creates persist until the beginning of my next turn, creating an area of difficult terrain for creatures other than me. When a creature enters the area for the first time on a turn or starts its turn there, it takes magical piercing damage equal to my proficiency bonus.",
+			},
+			"subclassfeature14" : {
+				name : "Voracious Appetite",
+				source : ["TGW", 20],
+				minlevel : 14,
+				description : "\n   " + "I focus my energy on empowering my abilities. I gain the following benefits:\n   Whenever I drop a creature to 0 HP for the first time on my turn, I gain HP equal to the damage dealt. If multiple creatures take damage from the same source, I choose which creature I gain the HP from.\n   I add my Charisma modifier to the damage dealt to creatures within the area of difficult terrain created by my \"Ravenous Bloom\".\nMy voracious appetite lasts for 1 minute. Once I've used this feature, I can't do so again until I finish a long rest.",
+				usages : 1,
+				recovery : "long rest",
+			},
+		}
+	}
+);
+
+FeatsList["draconic growth spurt (young)"] = {
+
+	name : "Draconic Growth Spurt (Young)",
+
+	source : ["TGW", 29],
+
+	prerequisite : "7th level and Dragon Wyrmling race; Must not have the Great Wyrm class",
+
+	allowDuplicates : false,
+
+	description : "I increase my Strength, Constitution, or Charisma score by 1, to a maximum of 20, I gain the \"Young Advancement\" class feature from the Great Wyrm class, and I gain a draconic trait of my choice that has \"Young Advancement\" as a prerequisite.",
+
+	improvements : "Draconic Growth Spurt (Young): +1 Strength, Constitution, or Charisma;",
+
+	bonusClassExtrachoices : [{
+		'class' : "great wyrm",
+		feature : "draconic evolution",
+		bonus : 1
+	}],
+}
+
+FeatsList["draconic growth spurt (adult)"] = {
+
+	name : "Draconic Growth Spurt (Adult)",
+
+	source : ["TGW", 29],
+
+	prerequisite : "13th level, Dragon Wyrmling race, and Draconic Growth Spurt (Young); Must not have the Great Wyrm class",
+
+	allowDuplicates : false,
+
+	description : "I increase my Strength, Constitution, or Charisma score by 1, to a maximum of 20, I gain the \"Adult Advancement\" class feature from the Great Wyrm class, and I gain a draconic trait of my choice that has \"Adult Advancement\" as a prerequisite.",
+
+	improvements : "Draconic Growth Spurt (Adult): +1 Strength, Constitution, or Charisma;",
+
+	bonusClassExtrachoices : [{
+		'class' : "great wyrm",
+		feature : "draconic evolution",
+		bonus : 1
+	}],
+}
+
+FeatsList["draconic growth spurt (ancient)"] = {
+
+	name : "Draconic Growth Spurt (Ancient)",
+
+	source : ["TGW", 29],
+
+	prerequisite : "18th level, Dragon Wyrmling race, and Draconic Growth Spurt (Adult); Must not have the Great Wyrm class",
+
+	allowDuplicates : false,
+
+	description : "I increase my Strength, Constitution, or Charisma score by 1, to a maximum of 20, I gain the \"Ancient Advancement\" class feature from the Great Wyrm class, and I gain a draconic trait of my choice that has \"Ancient Advancement\" as a prerequisite.",
+
+	descriptionFull : "You have a swimming speed of 40 feet while wearing this ring.",
+
+	improvements : "Draconic Growth Spurt (Ancient): +1 Strength, Constitution, or Charisma;",
+
+	bonusClassExtrachoices : [{
+		'class' : "great wyrm",
+		feature : "draconic evolution",
+		bonus : 1
+	}],
+}
+
+FeatsList["genetic awakening"] = {
+
+	name : "Genetic Awakening",
+
+	source : ["TGW", 29],
+
+	prerequisite : "Dragon Wyrmling race",
+
+	allowDuplicates : true,
+
+	description : "I gain a draconic trait of my choice. I can select this feat multiple times. Each time I do so, I must choose a different draconic trait.",
+
+	bonusClassExtrachoices : [{
+		'class' : "great wyrm",
+		feature : "draconic evolution",
+		bonus : 1
+	}],
+}
