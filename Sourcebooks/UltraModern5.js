@@ -7268,102 +7268,6 @@ ClassList["medic, archetypeless"] = {
 			description : "\n   " + "If I don't use the Attack action on my turn, I gain a +2 bonus to AC until the start of my next turn. At 5th level, this bonus increases to +3.",
 		},
 
-		"martial exploit" : {
-			name : "Martial Exploit",
-			source : ["UM5R", 83],
-			minlevel : 1,
-			description : "\n   " + "I can select one martial exploit from the list above.",
-			extraname : "Martial Exploits",
-			extrachoices : ["C-C-C-Combo Breaker", "Calisthenics", "Gun Something-Something", "Chain Boost", "Marker", "Newaza", "Pound For Pound", "Redirection of Energy", "Rhythm String", "Tag Team", "Ultra", "Unarmed Expanded Profile", "Vicious Hook (prereq: 10th level)", "Wrestler"],
-			extraTimes : levels.map(function (n) {
-				return n < 2 ? 1 : n < 5 ? 2 : n < 8 ? 3 : n < 11 ? 4 : n < 14 ? 5 : n < 17 ? 6 : n < 20 ? 7 : 8;
-			}),
-			"c-c-c-combo breaker" : {
-				name : "C-C-C-Combo Breaker",
-				description : "\n   " + "If the same creature in a single round hits me twice, I can perform a single melee attack against the triggering creature as a reaction (to the second attack). If I hit, I inflict normal damage, and the target's turn ends.",
-				action : ["reaction"],
-			},
-
-			"calisthenics" : {
-				name : "Calisthenics",
-				description : "\n   " + "I gain a +1 damage bonus to melee damage rolls.",
-			},
-
-			"gun something-something" : {
-				name : "Gun Something-Something",
-				description : "\n   " + "I treat one-handed small arms as melee weapons when attacking targets at 5 feet or closer. Additionally, all ranged attacks with one-handed small arms made against targets 5 feet or closer can be considered as melee attacks.",
-			},
-
-			"chain boost" : {
-				name : "Chain Boost",
-				description : "\n   " + "Instead of using my hit dice to recover HP during a short rest, I can expend them to increase my \"Combo Chain\". As a bonus action and spending 1d4 hit dice, I recover no HP, and increase my combo chain by that same value. Once I use this feature, I cannot use it again until I finish a short or long rest.",
-				usages : 1,
-				recovery : "short rest",
-				action : ["bonus action"],
-			},
-
-			"marker" : {
-				name : "Marker",
-				description : "\n   " + "When I hit an enemy that is in reach of me, it has disadvantage on any attacks that don't include me as a target until the end of my next turn. The effect ends if I'm reduced to 0 HP, I move out of reach of that enemy, but not if the enemy moves out of reach of me.",
-			},
-
-			"newaza" : {
-				name : "Newaza",
-				description : "\n   " + "I gain the following benefits:\n   If a creature breaks from my grapple, I can use my reaction to attempt a grapple check on the same target.\n   I have a +2 bonus to AC against any creature I'm grappling.\n   I do not have disadvantage on melee attacks while prone. Enemies do not have advantage on me with non-reach melee attacks if I'm prone.",
-			},
-
-			"pound for pound" : {
-				name : "Pound For Pound",
-				description : "\n   " + "If a creature moves away from me, even with the disengage action, I can use my reaction to move up to my speed with it.",
-				action : ["reaction"],
-			},
-
-			"redirection of energy" : {
-				name : "Redirection of Energy",
-				description : "\n   " + "When an enemy scores a critical hit on me with a melee attack, I gain temporary HP equal to the amount of damage dealt. When I use this exploit, I cannot use it again until I finish a long rest. Additionally, any time a creature scores a critical hit on me with a melee attack, I have advantage on melee attacks against that creature until the end of my next turn.",
-				usages : 1,
-				recovery : "long rest",
-			},
-
-			"rhythm string" : {
-				name : "Rhythm String",
-				description : "\n   " + "After performing a finishing move, the tier of said finishing move is a bonus I receive on my next melee attack at Tier 1.",
-			},
-
-			"plan of attack" : {
-				name : "Plan of Attack",
-				description : "\n   " + "I can spend 10 feet of movement to move another ally 5 feet. This movement does not provoke opportunity attacks and does not require a reaction on the ally's part.",
-			},
-
-			"tag team" : {
-				name : "Tag Team",
-				description : "\n   " + "If an ally hits an enemy within 5 feet of me with a melee attack, I can deal additional damage to that hit equal to my Strength or Dexterity modifier as a reaction. This does not count towards my \"Combo Chain\".",
-			},
-
-			"ultra" : {
-				name : "Ultra",
-				description : "\n   " + "After hitting a creature, I increase my combo chain tier by one and perform a finishing move. I must have access to the higher tier, and after using Ultra, I can't use it again until I finish a long rest.",
-				usages : 1,
-				recovery : "long rest",
-			},
-
-			"unarmed expanded profile" : {
-				name : "Unarmed Expanded Profile",
-				description : "\n   " + "I spend 30 feet of movement, and my unarmed attacks have reach until the beginning of my next turn.",
-			},
-
-			"vicious hook (prereq: 10th level)" : {
-				name : "Vicious Hook",
-				description : "\n   " + "My melee attacks score a critical hit on a natural roll of 19 or 20.",
-				prereqeval : function(v) { return classes.known['martial artist'].level >= 10; },
-			},
-
-			"wrestler" : {
-				name : "Wrestler",
-				description : "\n   " + "I gain the following benefits:\n   If I'm grappling a target, I have half cover from attacks from other targets.\n   Any attack that misses me by 5 or less hits my grappled target instead.\n   When moving a grabbed creature my size or smaller, my speed is not reduced.",
-			},
-		},
-
 		"medical emergency" : {
 			name : "Medical Emergency",
 			source : ["UM5R", 86],
@@ -8961,11 +8865,6 @@ ClassList["techie"] = {
 				description : "\n   " + "When I use the Disengage action, I can also make a single ranged attack as part of the same action. I inflict half damage on a hit.",
 			},
 
-			"perfect tracker" : {
-				name : "Perfect Tracker",
-				description : "\n   " + "I can move up to half my speed and maintain my sniper bonus.",
-			},
-
 			"shrapnel modification" : {
 				name : "Shrapnel Modification",
 				description : "\n   " + "I can now spend tech points in combat for an immediate boost to the weapon with my \"Shiny Red Button\" while it is active. I can spend 1 tech point after I hit, and the target is vulnerable to ally attacks until the beginning of my next turn.",
@@ -9139,11 +9038,6 @@ ClassList["techie, archetypeless"] = {
 			"scientist, not a soldier" : {
 				name : "Scientist, Not a Soldier",
 				description : "\n   " + "When I use the Disengage action, I can also make a single ranged attack as part of the same action. I inflict half damage on a hit.",
-			},
-
-			"perfect tracker" : {
-				name : "Perfect Tracker",
-				description : "\n   " + "I can move up to half my speed and maintain my sniper bonus.",
 			},
 
 			"shrapnel modification" : {
