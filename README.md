@@ -3,15 +3,15 @@ Welcome to this repository, not as expansive as it should be, but with due time,
 
 As of currently writing this README, I have created the following:
 
-22 Classes (and 35 Class Feature Variations)
-<br>14 Races (and 53 Subraces)
+40 Classes (and 35 Class Feature Variations)
+<br>23 Races (and 89 Subraces)
 <br>2 Variant Races
-<br>45 Subclasses
+<br>71 Subclasses
 <br>163 Creatures
-<br>9 Backgrounds
-<br>417 Feats
-<br>21 Weapons
+<br>20 Backgrounds
+<br>460 Feats
+<br>163 Weapons
 <br>157 Spells
 <br>299 Magic Items
-<br>7 (Pieces of) Armor
+<br>24 (Pieces of) Armor
 <br>2 (Separate instances of) Gear
